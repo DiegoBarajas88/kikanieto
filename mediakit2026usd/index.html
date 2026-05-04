@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kika Nieto · Tarifario USD 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --neon: #E8FF00;
+      --dark: #0A0907;
+      --warm: #F5F0E8;
+      --white: #FFFFFF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      min-height: 100vh;
+      font-family: 'Jost', sans-serif;
+      background: var(--dark);
+      color: var(--white);
+    }
+    .page {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      min-height: 100vh;
+    }
+    /* LEFT PANEL */
+    .left {
+      background: var(--dark);
+      border-right: 1px solid rgba(232,255,0,.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 44px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+    .left-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: rgba(232,255,0,.45);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .left-big {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 72px;
+      line-height: .88;
+      letter-spacing: 2px;
+      color: var(--neon);
+      text-shadow: 0 0 30px rgba(232,255,0,.4);
+    }
+    .left-script {
+      font-family: 'Dancing Script', cursive;
+      font-size: 42px;
+      font-weight: 600;
+      color: rgba(232,255,0,.65);
+      display: block;
+      margin-top: 6px;
+    }
+    .left-sub {
+      font-size: 10.5px;
+      font-weight: 400;
+      color: rgba(255,255,255,.45);
+      margin-top: 20px;
+      line-height: 1.7;
+      letter-spacing: .3px;
+    }
+    .left-back {
+      display: inline-block;
+      margin-top: 36px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--dark);
+      background: var(--neon);
+      padding: 10px 22px;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: opacity .2s;
+      width: fit-content;
+    }
+    .left-back:hover { opacity: .85; }
+
+    /* RIGHT PANEL */
+    .right {
+      background: var(--warm);
+      padding: 60px 60px 80px;
+      overflow-y: auto;
+    }
+    .table-title {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(0,0,0,.35);
+      margin-bottom: 24px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+    thead tr {
+      border-bottom: 2px solid rgba(0,0,0,.12);
+    }
+    th {
+      font-family: 'Jost', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(0,0,0,.4);
+      padding: 0 12px 12px 0;
+      text-align: left;
+    }
+    td {
+      padding: 11px 12px 11px 0;
+      color: #1a1a1a;
+      border-bottom: 1px solid rgba(0,0,0,.07);
+      vertical-align: middle;
+    }
+    tr:last-child td { border-bottom: none; }
+    td.price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 17px;
+      letter-spacing: .5px;
+      color: #1a1a1a;
+      white-space: nowrap;
+    }
+    td.type {
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(0,0,0,.38);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .section-divider {
+      font-family: 'Jost', sans-serif;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(0,0,0,.28);
+      padding: 22px 0 8px;
+      border-top: 1px solid rgba(0,0,0,.1);
+      margin-top: 6px;
+    }
+    .note {
+      margin-top: 44px;
+      font-size: 10px;
+      color: rgba(0,0,0,.35);
+      line-height: 1.8;
+      letter-spacing: .2px;
+    }
+
+    @media (max-width: 768px) {
+      .page { grid-template-columns: 1fr; }
+      .left { position: relative; height: auto; padding: 48px 32px; }
+      .right { padding: 40px 24px 60px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- LEFT -->
+  <div class="left">
+    <div class="left-label">Precios Internacionales</div>
+    <div class="left-big">TARIFARIO</div>
+    <span class="left-script">2026</span>
+    <p class="left-sub">
+      Precios en Dólares Americanos USD<br>
+      1 USD = 3,600 COP<br>
+      Sin IVA incluido.<br><br>
+      Cada inversión llega a una audiencia<br>que ya confía en Kika.
+    </p>
+    <a class="left-back" href="/mediakit2026">← Volver al Media Kit</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <div class="table-title">Kika Nieto · Precios USD (sin IVA)</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:260px;">Formato</th>
+          <th style="width:60px;">Canal</th>
+          <th>Precio USD</th>
+          <th>Tipo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Instagram -->
+        <tr><td colspan="4" class="section-divider">Instagram</td></tr>
+        <tr><td>Historia</td><td>IG</td><td class="price">USD $1,814</td><td class="type">Historia</td></tr>
+        <tr><td>Fotopost</td><td>IG</td><td class="price">USD $2,091</td><td class="type">Feed</td></tr>
+        <tr><td>Fotopost en collab</td><td>IG</td><td class="price">USD $2,416</td><td class="type">Collab</td></tr>
+        <tr><td>Fotopost en redes de cliente</td><td>IG</td><td class="price">USD $1,869</td><td class="type">UGC</td></tr>
+        <tr><td>Reel</td><td>IG</td><td class="price">USD $2,513</td><td class="type">Feed</td></tr>
+        <tr><td>Reel en collab</td><td>IG</td><td class="price">USD $2,902</td><td class="type">Collab</td></tr>
+        <tr><td>Reel para redes de cliente</td><td>IG</td><td class="price">USD $1,883</td><td class="type">UGC</td></tr>
+        <tr><td>Instagram live por 45 min sin publicar</td><td>IG</td><td class="price">USD $2,791</td><td class="type">Live</td></tr>
+        <tr><td>Live shopping de 30 a 45 minutos</td><td>IG</td><td class="price">USD $3,350</td><td class="type">Live</td></tr>
+
+        <!-- TikTok -->
+        <tr><td colspan="4" class="section-divider">TikTok</td></tr>
+        <tr><td>Tiktok</td><td>TK</td><td class="price">USD $2,094</td><td class="type">Feed</td></tr>
+
+        <!-- Derechos -->
+        <tr><td colspan="4" class="section-divider">Derechos de imagen y pauta</td></tr>
+        <tr><td>Derechos de pauta por un mes</td><td>—</td><td class="price">USD $888</td><td class="type">Derechos</td></tr>
+        <tr><td>Derechos para uso de imagen digital por 1 mes</td><td>—</td><td class="price">USD $722</td><td class="type">Derechos</td></tr>
+        <tr><td>Derechos de uso de imagen y pauta por 1 mes</td><td>—</td><td class="price">USD $1,194</td><td class="type">Derechos</td></tr>
+
+        <!-- YouTube -->
+        <tr><td colspan="4" class="section-divider">YouTube</td></tr>
+        <tr><td>Video YouTube Mención por 1 minuto (Canal principal)</td><td>YT</td><td class="price">USD $1,166</td><td class="type">Mención</td></tr>
+        <tr><td>Video YouTube Dedicado (Canal principal)</td><td>YT</td><td class="price">USD $3,333</td><td class="type">Dedicado</td></tr>
+        <tr><td>Video YouTube Mención por 1 minuto (Canal vlogs)</td><td>YT</td><td class="price">USD $1,166</td><td class="type">Mención</td></tr>
+        <tr><td>Video YouTube Dedicado (Canal vlogs)</td><td>YT</td><td class="price">USD $2,166</td><td class="type">Dedicado</td></tr>
+      </tbody>
+    </table>
+
+    <p class="note">
+      Todos los precios están expresados en dólares americanos (USD).<br>
+      Tipo de cambio de referencia: 1 USD = 3,600 COP · Precios sin IVA incluido.<br>
+      Para tarifas en pesos colombianos, visita <a href="/mediakit2026" style="color:inherit;">kikanieto.com/mediakit2026</a>
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
