@@ -1,0 +1,48 @@
+name: Actualizar tasa USD/COP
+
+on:
+  schedule:
+    - cron: '0 14 1 * *'   # Día 1 de cada mes a las 9am Colombia (UTC-5)
+  workflow_dispatch:         # Permite lanzarlo manualmente desde GitHub
+
+jobs:
+  update-rate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Obtener tasa USD/COP
+        id: rate
+        run: |
+          RATE=$(curl -s "https://api.exchangerate-api.com/v4/latest/USD" \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print(int(round(d['rates']['COP'])))")
+          echo "rate=$RATE" >> $GITHUB_OUTPUT
+          echo "Tasa obtenida: 1 USD = $RATE COP"
+
+      - name: Actualizar tasa en HTML
+        run: |
+          RATE=${{ steps.rate.outputs.rate }}
+          DATE=$(date '+%Y-%m-%d')
+          # Reemplaza la línea con la tasa en ambos archivos
+          sed -i "s/const USD_RATE = [0-9]*/const USD_RATE = $RATE/" mediakit2026/index.html
+          sed -i "s/const USD_RATE = [0-9]*/const USD_RATE = $RATE/" mediakit2026/indexVF.html
+          # Actualiza la fecha de última actualización
+          sed -i "s/\/\/ rate-date: .*/\/\/ rate-date: $DATE/" mediakit2026/index.html
+          sed -i "s/\/\/ rate-date: .*/\/\/ rate-date: $DATE/" mediakit2026/indexVF.html
+          echo "Archivos actualizados con tasa $RATE COP/USD"
+
+      - name: Commit y push si hubo cambio
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add mediakit2026/index.html mediakit2026/indexVF.html
+          if git diff --staged --quiet; then
+            echo "Sin cambios, tasa igual al mes anterior."
+          else
+            git commit -m "chore: tasa USD actualizada a ${{ steps.rate.outputs.rate }} COP ($(date '+%Y-%m-%d'))"
+            git push
+          fi
