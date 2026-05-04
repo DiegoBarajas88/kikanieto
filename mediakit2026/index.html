@@ -486,32 +486,36 @@ body{background:#111;font-family:'Jost',sans-serif;}
   overflow:hidden;
 }
 .s11-table{
-  width:100%;border-collapse:collapse;
+  width:100%;border-collapse:collapse;table-layout:fixed;
 }
 .s11-wrap{
-  padding:40px 44px;height:100%;overflow:hidden;
+  padding:28px 36px;height:100%;overflow-y:auto;
 }
 .s11-table-title{
   font-family:'Jost',sans-serif;font-size:10px;font-weight:700;
   letter-spacing:3px;text-transform:uppercase;color:rgba(0,0,0,.35);
-  margin-bottom:18px;
+  margin-bottom:14px;
 }
 .s11-table th{
   font-family:'Jost',sans-serif;font-size:9px;font-weight:700;
   letter-spacing:2.5px;text-transform:uppercase;color:rgba(0,0,0,.35);
-  padding:0 0 10px;text-align:left;border-bottom:1.5px solid rgba(0,0,0,.08);
+  padding:0 0 9px;text-align:left;border-bottom:1.5px solid rgba(0,0,0,.08);
 }
+.s11-table col.col-formato{width:52%;}
+.s11-table col.col-canal  {width:52px;}
+.s11-table col.col-precio {width:22%;}
+.s11-table col.col-tipo   {width:18%;}
 .s11-table td{
-  font-family:'Jost',sans-serif;font-size:12px;font-weight:400;
-  color:rgba(0,0,0,.7);padding:7px 8px 7px 0;
+  font-family:'Jost',sans-serif;font-size:11.5px;font-weight:400;
+  color:rgba(0,0,0,.7);padding:5.5px 6px 5.5px 0;
   border-bottom:1px solid rgba(0,0,0,.05);vertical-align:middle;
 }
 .s11-table td.price{
-  font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.5px;
+  font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.5px;
   color:var(--ink);white-space:nowrap;
 }
 .s11-table td.type{
-  font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
   color:rgba(0,0,0,.35);
 }
 
@@ -1045,10 +1049,16 @@ body{background:#111;font-family:'Jost',sans-serif;}
     <div class="s11-wrap">
       <div class="s11-table-title">Kika Nieto · Precios COP (sin IVA)</div>
       <table class="s11-table">
+        <colgroup>
+          <col class="col-formato">
+          <col class="col-canal">
+          <col class="col-precio">
+          <col class="col-tipo">
+        </colgroup>
         <thead>
           <tr>
-            <th style="width:180px;">Formato</th>
-            <th style="width:60px;">Canal</th>
+            <th>Formato</th>
+            <th>Canal</th>
             <th>Precio COP</th>
             <th>Tipo</th>
           </tr>
