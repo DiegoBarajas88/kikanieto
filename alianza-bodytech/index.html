@@ -173,6 +173,12 @@ section{position:relative;overflow:hidden}
   font-size:clamp(52px,6.5vw,92px);color:var(--bt);
   line-height:1.05;margin-bottom:32px;
 }
+.hero-brandline{
+  display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+  margin-bottom:32px;
+}
+.hero-brandline .hero-script{margin-bottom:0}
+.hero-logo{height:clamp(30px,4vw,52px);display:block}
 .hero-tagline{
   font-size:19px;font-weight:300;color:var(--muted);
   max-width:540px;margin-bottom:56px;line-height:1.75;
@@ -574,6 +580,8 @@ table.comp td.gold-col{background:rgba(240,192,64,.025)}
   .cierre-eyebrow{letter-spacing:2.6px}
   .hero-title{font-size:clamp(58px,22vw,88px);letter-spacing:1px}
   .hero-script{font-size:clamp(38px,12vw,56px);margin-bottom:22px}
+  .hero-brandline{gap:14px;margin-bottom:22px}
+  .hero-logo{height:26px}
   .hero-tagline{font-size:15px;line-height:1.7;margin-bottom:28px}
   .hero-tiers{gap:10px;margin-bottom:28px}
   .tier-pill{width:100%;justify-content:center;padding:12px 18px}
@@ -646,7 +654,7 @@ table.comp td.gold-col{background:rgba(240,192,64,.025)}
   <div class="gate-grid"></div>
   <div class="gate-inner">
     <div class="gate-logos">
-      <div class="gate-logo-box bt"><img class="gate-logo-img" src="bodytech-logo.svg" alt="Bodytech"></div>
+      <div class="gate-logo-box bt"><img class="gate-logo-img" src="bodytech-logo.png" alt="Bodytech"></div>
       <span class="gate-x">×</span>
       <div class="gate-logo-box kn">KIKA NIETO</div>
     </div>
@@ -668,7 +676,7 @@ table.comp td.gold-col{background:rgba(240,192,64,.025)}
   <!-- TOP NAV -->
   <nav class="topnav">
     <div class="topnav-brand">
-      <img class="topnav-logo" src="bodytech-logo.svg" alt="Bodytech">
+      <img class="topnav-logo" src="bodytech-logo.png" alt="Bodytech">
       <span class="topnav-s">×</span>
       <span class="topnav-k">Kika Nieto</span>
     </div>
@@ -688,7 +696,10 @@ table.comp td.gold-col{background:rgba(240,192,64,.025)}
           Propuesta Confidencial · Julio 2026
         </div>
         <h1 class="hero-title">ALIANZA<br>ESTRATÉGICA</h1>
-        <span class="hero-script">Bodytech × Kika Nieto</span>
+        <div class="hero-brandline">
+          <img class="hero-logo" src="bodytech-logo.png" alt="Bodytech">
+          <span class="hero-script">× Kika Nieto</span>
+        </div>
         <p class="hero-tagline">
           Una app que personaliza el bienestar. Una comunidad que confía.<br>
           <em>Una embajadora que la vive y la cuenta de forma natural.</em>
