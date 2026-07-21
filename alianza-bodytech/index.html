@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alianza Bodytech × Kika Nieto 2026 — Propuesta Confidencial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --neon:#E8FF00;
+  --bt:#EF7D00;
+  --bt2:rgba(239,125,0,.12);
+  --ink:#07090F;
+  --ink2:#0D1220;
+  --text:rgba(255,255,255,.88);
+  --muted:rgba(255,255,255,.5);
+  --subtle:rgba(255,255,255,.2);
+  --border:rgba(255,255,255,.09);
+  --silver-c:#B8C4D4;
+  --gold-c:#F0C040;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--text);font-family:'Jost',sans-serif;line-height:1.6;overflow-x:hidden}
+
+/* ── PASSWORD GATE ── */
+#gate{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+}
+.gate-glow{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(239,125,0,.22) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 30% at 85% 15%, rgba(232,255,0,.05) 0%, transparent 60%);
+}
+.gate-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size:64px 64px;
+}
+.gate-inner{
+  position:relative;z-index:1;
+  text-align:center;max-width:420px;padding:0 24px;
+}
+.gate-logos{
+  display:flex;align-items:center;justify-content:center;gap:20px;
+  margin-bottom:32px;
+}
+.gate-logo-img{height:26px;display:block}
+.gate-logo-box{
+  padding:8px 18px;border-radius:10px;
+  border:1px solid;font-size:13px;font-weight:700;letter-spacing:1.5px;
+}
+.gate-logo-box.bt{border-color:rgba(239,125,0,.5);background:rgba(239,125,0,.08);display:flex;align-items:center}
+.gate-logo-box.kn{border-color:rgba(232,255,0,.4);color:var(--neon);background:rgba(232,255,0,.06)}
+.gate-x{color:var(--muted);font-size:18px;font-weight:300}
+.gate-eyebrow{
+  font-size:9px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;
+  color:var(--bt);margin-bottom:14px;
+}
+.gate-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:52px;line-height:.88;color:#fff;margin-bottom:6px;
+}
+.gate-script{
+  display:block;font-family:'Dancing Script',cursive;
+  font-size:38px;color:rgba(239,125,0,.9);margin-bottom:28px;line-height:1.1;
+}
+.gate-desc{font-size:13px;color:var(--muted);margin-bottom:32px;line-height:1.7}
+.gate-divider{width:48px;height:1px;background:linear-gradient(90deg,transparent,rgba(239,125,0,.6),transparent);margin:0 auto 32px}
+.gate-input{
+  display:block;width:100%;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+  border-radius:12px;padding:15px 20px;
+  font-family:'Jost',sans-serif;font-size:15px;font-weight:500;color:#fff;
+  letter-spacing:3px;text-align:center;outline:none;
+  transition:border-color .2s,background .2s;margin-bottom:10px;
+}
+.gate-input::placeholder{color:rgba(255,255,255,.28);letter-spacing:1px;font-size:13px}
+.gate-input:focus{border-color:rgba(239,125,0,.55);background:rgba(239,125,0,.04)}
+.gate-btn{
+  display:block;width:100%;
+  background:var(--bt);color:#fff;border:none;border-radius:12px;
+  padding:15px 20px;font-family:'Jost',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;cursor:pointer;
+  transition:opacity .2s,transform .1s;
+}
+.gate-btn:hover{opacity:.87;transform:translateY(-1px)}
+.gate-btn:active{transform:translateY(0)}
+.gate-error{
+  font-size:12px;color:#FF6B6B;letter-spacing:.5px;margin-top:10px;
+  display:none;
+}
+.gate-note{font-size:11px;color:var(--subtle);margin-top:20px;letter-spacing:.5px}
+
+/* ── MAIN APP ── */
+#app{display:none}
+
+/* ── TOP NAV ── */
+.topnav{
+  position:fixed;top:0;left:0;right:0;height:58px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 52px;
+  background:rgba(7,9,15,.82);backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--border);z-index:100;
+  font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+}
+.topnav-brand{display:flex;align-items:center;gap:10px}
+.topnav-logo{height:16px;display:block}
+.topnav-s{color:var(--muted)}.topnav-k{color:var(--neon)}
+.topnav-right{display:flex;align-items:center;gap:16px}
+.conf-badge{
+  padding:4px 12px;border-radius:999px;
+  background:rgba(239,125,0,.1);border:1px solid rgba(239,125,0,.3);
+  color:var(--bt);font-size:9px;letter-spacing:1.5px;
+}
+
+/* ── SECTIONS BASE ── */
+section{position:relative;overflow:hidden}
+.wrap{max-width:1160px;margin:0 auto;padding:0 52px}
+.sec-label{
+  font-size:9px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;
+  color:var(--bt);margin-bottom:14px;display:block;
+}
+.sec-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(44px,5.5vw,76px);line-height:.88;color:#fff;margin-bottom:14px;
+}
+.sec-sub{font-size:15px;font-weight:300;color:var(--muted);max-width:580px;line-height:1.8}
+.accent-bar{width:42px;height:3px;background:var(--bt);border-radius:2px;margin-bottom:28px}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding-top:58px;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 100% 80% at 50% 110%, rgba(239,125,0,.18) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 92% 8%, rgba(232,255,0,.05) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 8% 90%, rgba(240,192,64,.05) 0%, transparent 60%);
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+  background-size:72px 72px;
+}
+.hero-content{position:relative;z-index:1;padding:80px 0 100px}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-bottom:24px;font-size:9px;font-weight:700;
+  letter-spacing:3.5px;text-transform:uppercase;color:var(--bt);
+}
+.eyebrow-dot{
+  width:7px;height:7px;border-radius:50%;background:var(--bt);
+  animation:blink 2.2s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(76px,10vw,140px);line-height:.84;
+  color:#fff;letter-spacing:2px;margin-bottom:4px;
+}
+.hero-script{
+  display:block;font-family:'Dancing Script',cursive;
+  font-size:clamp(52px,6.5vw,92px);color:var(--bt);
+  line-height:1.05;margin-bottom:32px;
+}
+.hero-tagline{
+  font-size:19px;font-weight:300;color:var(--muted);
+  max-width:540px;margin-bottom:56px;line-height:1.75;
+}
+.hero-tagline em{color:#fff;font-style:normal;font-weight:500}
+.hero-tiers{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:56px}
+.tier-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 22px;border-radius:999px;border:1px solid;
+  font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+  transition:transform .2s;
+}
+.tier-pill:hover{transform:translateY(-2px)}
+.tier-pill.silver{border-color:rgba(184,196,212,.35);color:var(--silver-c);background:rgba(184,196,212,.06)}
+.tier-pill.gold{border-color:rgba(240,192,64,.4);color:var(--gold-c);background:rgba(240,192,64,.07)}
+.tier-dot{width:6px;height:6px;border-radius:50%;background:currentColor}
+.hero-stats{display:flex;gap:0;flex-wrap:wrap;padding-top:40px;border-top:1px solid var(--border)}
+.hero-stat{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 32px 16px 0;margin-right:32px;
+  border-right:1px solid var(--border);
+}
+.hero-stat:last-child{border-right:none}
+.hero-stat-icon{
+  width:38px;height:38px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;opacity:.72;
+}
+.hero-stat-icon svg{width:22px;height:22px;fill:currentColor}
+.hero-stat-icon.yt{background:rgba(255,0,0,.12);color:#FF4444}
+.hero-stat-icon.ig{background:rgba(193,53,132,.12);color:#E1306C}
+.hero-stat-icon.tk{background:rgba(255,255,255,.08);color:#fff}
+.hero-stat-icon.fb{background:rgba(24,119,242,.12);color:#1877F2}
+.hero-stat-n{
+  font-family:'Bebas Neue',sans-serif;font-size:34px;color:#fff;
+  line-height:1;margin-bottom:1px;
+}
+.hero-stat-lbl{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:1px}
+.hero-stat-handle{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.3px}
+
+/* ── OPORTUNIDAD ── */
+#oportunidad{
+  padding:130px 0;
+  background:var(--ink2);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+}
+.op-grid{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center;margin-top:64px}
+.op-copy p{font-size:15px;color:var(--muted);margin-bottom:20px;line-height:1.85}
+.op-copy p strong{color:#fff;font-weight:600}
+.op-highlight{
+  border-left:3px solid var(--bt);padding-left:22px;
+  font-size:17px;color:#fff;font-weight:500;line-height:1.65;font-style:italic;
+  margin-top:28px;
+}
+.op-cards{display:flex;flex-direction:column;gap:16px}
+.op-card{
+  background:rgba(255,255,255,.04);border:1px solid var(--border);
+  border-radius:18px;padding:24px 28px;
+  display:flex;align-items:flex-start;gap:18px;
+}
+.op-card-icon{
+  width:42px;height:42px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+  background:rgba(239,125,0,.1);border:1px solid rgba(239,125,0,.2);
+}
+.op-card-title{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px;letter-spacing:.3px}
+.op-card-body{font-size:12px;color:var(--muted);line-height:1.65}
+
+/* ── BODYTECH PROPUESTA ── */
+#bt-propuesta{padding:130px 0}
+.prop-card{
+  background:rgba(255,255,255,.04);border:1px solid var(--border);
+  border-radius:24px;padding:44px 48px;margin-top:52px;position:relative;overflow:hidden;
+}
+.prop-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--bt),rgba(239,125,0,0));
+}
+.prop-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:36px}
+.prop-col h4{
+  font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--bt);margin-bottom:18px;
+}
+.prop-item{
+  display:flex;align-items:flex-start;gap:12px;padding:12px 0;
+  border-bottom:1px solid rgba(255,255,255,.055);font-size:13px;color:var(--muted);
+}
+.prop-item:last-child{border-bottom:none}
+.pi-num{
+  width:22px;height:22px;border-radius:6px;flex-shrink:0;margin-top:1px;
+  background:rgba(239,125,0,.12);border:1px solid rgba(239,125,0,.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:9px;font-weight:700;color:var(--bt);
+}
+.respuesta-box{
+  margin-top:44px;padding:32px 40px;text-align:center;
+  background:linear-gradient(135deg,rgba(232,255,0,.04),rgba(239,125,0,.04));
+  border:1px solid rgba(255,255,255,.08);border-radius:18px;
+}
+.respuesta-box p{font-size:19px;font-weight:500;color:#fff;font-style:italic;line-height:1.65}
+.respuesta-box span.y{color:var(--neon)}
+.respuesta-box span.o{color:var(--bt)}
+
+/* ── PLANES ── */
+#planes{
+  padding:130px 0;
+  background:var(--ink2);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+}
+.plans-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:64px;max-width:880px;margin-left:auto;margin-right:auto}
+.poc{
+  border-radius:24px;padding:36px 30px;border:1px solid;
+  position:relative;overflow:hidden;transition:transform .25s;cursor:default;
+}
+.poc:hover{transform:translateY(-6px)}
+.poc.silver{border-color:rgba(184,196,212,.22);background:rgba(184,196,212,.03)}
+.poc.gold{border-color:rgba(240,192,64,.3);background:rgba(240,192,64,.04)}
+.poc-rec{
+  position:absolute;top:18px;right:-30px;
+  background:var(--gold-c);color:#000;
+  font-size:8px;font-weight:800;letter-spacing:1.5px;
+  padding:5px 44px;transform:rotate(45deg);
+}
+.poc-tier{font-size:9px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;margin-bottom:6px}
+.silver .poc-tier{color:var(--silver-c)}.gold .poc-tier{color:var(--gold-c)}
+.poc-name{
+  font-family:'Bebas Neue',sans-serif;font-size:36px;color:#fff;
+  line-height:1;margin-bottom:22px;
+}
+.poc-label{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.poc-val{
+  font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1;margin-bottom:4px;
+}
+.silver .poc-val{color:var(--silver-c)}.gold .poc-val{color:var(--gold-c)}
+.poc-sub{font-size:11px;color:var(--muted);letter-spacing:.4px;margin-bottom:24px}
+.poc-divider{height:1px;background:var(--border);margin:20px 0}
+.poc-row{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);padding:6px 0}
+.poc-row-val{font-weight:600;color:rgba(255,255,255,.7)}
+.poc-count{
+  margin-top:20px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  padding:12px 16px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid var(--border);
+  color:var(--muted);text-align:center;
+}
+.silver .poc-count span{color:var(--silver-c)}
+.gold .poc-count span{color:var(--gold-c)}
+
+/* ── PLAN DETAIL ── */
+.plan-detail{padding:110px 0;border-top:1px solid var(--border)}
+.plan-detail.silver-bg{background:linear-gradient(160deg,rgba(184,196,212,.03) 0%,transparent 40%)}
+.plan-detail.gold-bg{background:linear-gradient(160deg,rgba(240,192,64,.04) 0%,transparent 40%)}
+.plan-head{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:56px}
+.plan-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 16px;border-radius:999px;border:1px solid;
+  font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;
+}
+.silver .plan-badge{border-color:var(--silver-c);color:var(--silver-c)}
+.gold .plan-badge{border-color:var(--gold-c);color:var(--gold-c)}
+.plan-total-box{text-align:right;flex-shrink:0}
+.ptb-label{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.ptb-val{font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:1}
+.silver .ptb-val{color:var(--silver-c)}.gold .ptb-val{color:var(--gold-c)}
+.ptb-sub{font-size:11px;color:var(--muted);margin-top:2px}
+.plan-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.plan-col{
+  background:rgba(255,255,255,.04);border:1px solid var(--border);
+  border-radius:22px;padding:30px 32px;
+}
+.plan-col-hd{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid var(--border);
+}
+.plan-col-hd-t{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.plan-col-hd-v{font-family:'Bebas Neue',sans-serif;font-size:26px;line-height:1}
+.silver .plan-col-hd-v{color:var(--silver-c)}.gold .plan-col-hd-v{color:var(--gold-c)}
+.item-list{list-style:none}
+.item-list li{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:9px 0;border-bottom:1px solid rgba(255,255,255,.045);
+  font-size:12.5px;color:var(--muted);line-height:1.45;
+}
+.item-list li:last-child{border-bottom:none}
+.li-icon{
+  width:18px;height:18px;border-radius:5px;flex-shrink:0;margin-top:1px;
+  display:flex;align-items:center;justify-content:center;font-size:8px;
+}
+.silver .li-icon{background:rgba(184,196,212,.12);color:var(--silver-c)}
+.gold .li-icon{background:rgba(240,192,64,.12);color:var(--gold-c)}
+.li-val{margin-left:auto;font-size:11px;font-weight:600;color:rgba(255,255,255,.4);flex-shrink:0;padding-left:8px;white-space:nowrap}
+.plan-nota{
+  margin-top:20px;padding:14px 18px;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;
+  font-size:12px;color:var(--muted);line-height:1.6;
+}
+.plan-nota strong{color:rgba(255,255,255,.7)}
+
+/* ── TABLA COMPARATIVA ── */
+#tabla{
+  padding:130px 0;
+  background:var(--ink2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+}
+.comp-wrap{overflow-x:auto;margin-top:56px}
+table.comp{
+  width:100%;border-collapse:collapse;font-size:13px;min-width:640px;
+}
+table.comp thead th{
+  padding:14px 18px;text-align:left;
+  font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+  border-bottom:2px solid var(--border);background:var(--ink2);
+}
+table.comp thead th:first-child{color:var(--muted);width:44%}
+table.comp thead th.silver-h{color:var(--silver-c);border-bottom-color:var(--silver-c)}
+table.comp thead th.gold-h{color:var(--gold-c);border-bottom-color:var(--gold-c);background:rgba(240,192,64,.04)}
+table.comp tbody tr:hover td{background:rgba(255,255,255,.018)}
+table.comp td{
+  padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.05);
+  color:var(--muted);vertical-align:middle;
+}
+table.comp td.feat{color:#fff;font-weight:500}
+table.comp td.gold-col{background:rgba(240,192,64,.025)}
+.chk{color:#4ade80;font-size:15px}.crs{color:rgba(255,255,255,.18);font-size:15px}
+.cat-row td{
+  background:rgba(255,255,255,.025) !important;
+  font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--bt);padding:11px 18px;
+}
+.val-cell{
+  font-family:'Bebas Neue',sans-serif;font-size:20px;line-height:1;
+}
+.val-cell.s{color:var(--silver-c)}
+.val-cell.g{color:var(--gold-c)}
+
+/* ── CRONOGRAMA / MES TIPO ── */
+#cronograma{padding:130px 0}
+.tl-wrap{margin-top:64px;position:relative}
+.tl-line{
+  position:absolute;top:32px;left:12%;right:12%;height:2px;
+  background:linear-gradient(90deg,var(--silver-c),var(--gold-c),var(--bt),var(--neon));
+  z-index:0;
+}
+.tl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.tl-item{position:relative;padding:0 16px;text-align:center}
+.tl-dot{
+  width:64px;height:64px;border-radius:50%;border:2px solid;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 22px;position:relative;z-index:1;
+  font-family:'Bebas Neue',sans-serif;font-size:22px;background:var(--ink);
+}
+.tl-item:nth-child(1) .tl-dot{border-color:var(--silver-c);color:var(--silver-c)}
+.tl-item:nth-child(2) .tl-dot{border-color:var(--gold-c);color:var(--gold-c)}
+.tl-item:nth-child(3) .tl-dot{border-color:var(--bt);color:var(--bt)}
+.tl-item:nth-child(4) .tl-dot{border-color:var(--neon);color:var(--neon)}
+.tl-month{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.tl-title{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;margin-bottom:12px;line-height:1.1}
+.tl-items{font-size:12px;color:var(--muted);line-height:1.9}
+.tl-items li{list-style:none;display:flex;align-items:flex-start;gap:6px;justify-content:center}
+.tl-items li::before{content:'—';color:rgba(255,255,255,.2);flex-shrink:0}
+
+/* ── CIERRE ── */
+#cierre{
+  padding:140px 0;text-align:center;position:relative;overflow:hidden;
+}
+.cierre-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 50%, rgba(239,125,0,.12) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 30% at 10% 90%, rgba(232,255,0,.04) 0%, transparent 60%);
+}
+.cierre-eyebrow{
+  font-size:9px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;
+  color:var(--bt);margin-bottom:16px;position:relative;
+}
+.cierre-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(52px,8vw,110px);color:#fff;line-height:.86;
+  margin-bottom:8px;position:relative;
+}
+.cierre-script{
+  display:block;font-family:'Dancing Script',cursive;
+  font-size:clamp(40px,5vw,72px);color:var(--bt);
+  margin-bottom:32px;position:relative;
+}
+.cierre-sub{
+  font-size:16px;font-weight:300;color:var(--muted);
+  max-width:560px;margin:0 auto 52px;line-height:1.8;position:relative;
+}
+.cierre-sub strong{color:#fff;font-weight:600}
+.cierre-plans{
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+  margin-bottom:72px;position:relative;
+}
+.cierre-plan{
+  padding:15px 28px;border-radius:14px;border:1px solid;
+  font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+}
+.cierre-plan.silver{border-color:var(--silver-c);color:var(--silver-c);background:rgba(184,196,212,.06)}
+.cierre-plan.gold{
+  border-color:var(--gold-c);color:var(--gold-c);background:rgba(240,192,64,.08);
+  box-shadow:0 0 40px rgba(240,192,64,.12),0 0 80px rgba(240,192,64,.06);
+}
+.contacts-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+  max-width:640px;margin:0 auto;position:relative;
+}
+.contact-box{
+  background:rgba(255,255,255,.04);border:1px solid var(--border);
+  border-radius:20px;padding:28px 32px;text-align:left;
+}
+.cb-label{
+  font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--bt);margin-bottom:12px;
+}
+.cb-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:3px}
+.cb-role{font-size:11px;color:var(--muted);margin-bottom:14px;letter-spacing:.3px}
+.cb-info{font-size:13px;color:rgba(255,255,255,.65);line-height:1.8}
+.cb-info a{color:var(--bt);text-decoration:none}
+
+/* ── FOOTER ── */
+.footer{
+  padding:28px 52px;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:10px;color:var(--subtle);letter-spacing:.8px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px){
+  .topnav,
+  .wrap,
+  .footer{padding-left:32px;padding-right:32px}
+
+  #oportunidad,
+  #bt-propuesta,
+  #planes,
+  #tabla,
+  #cronograma,
+  #cierre,
+  .plan-detail{padding-top:96px;padding-bottom:96px}
+
+  .hero-content{padding:72px 0 84px}
+  .hero-tagline{font-size:17px;max-width:620px;margin-bottom:40px}
+  .hero-stats{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;padding-top:28px;
+  }
+  .hero-stat{
+    margin-right:0;padding:18px;border:1px solid var(--border);
+    border-right:1px solid var(--border);border-radius:16px;
+    background:rgba(255,255,255,.03);
+  }
+
+  .op-grid,
+  .prop-grid,
+  .plan-cols,
+  .contacts-grid{grid-template-columns:1fr;gap:24px}
+
+  .plans-grid{grid-template-columns:1fr;max-width:520px}
+
+  .prop-card,
+  .plan-col,
+  .contact-box{padding:28px}
+
+  .plan-head,
+  .plan-col-hd{
+    flex-direction:column;align-items:flex-start;
+  }
+
+  .plan-total-box{max-width:none;text-align:left}
+
+  .tl-line{display:none}
+  .tl-grid{grid-template-columns:1fr;gap:24px}
+  .tl-item{padding:0 0 0 78px;text-align:left}
+  .tl-dot{
+    position:absolute;left:0;top:0;
+    width:54px;height:54px;margin:0;
+  }
+  .tl-items li{justify-content:flex-start}
+
+  .footer{
+    flex-direction:column;align-items:flex-start;gap:10px;
+  }
+}
+
+@media (max-width: 640px){
+  .topnav{
+    height:auto;min-height:58px;padding:14px 18px;
+    gap:12px;align-items:flex-start;flex-direction:column;
+  }
+  .topnav-right{width:100%}
+  .conf-badge{display:inline-flex}
+
+  .wrap,
+  .footer{padding-left:18px;padding-right:18px}
+
+  #hero{min-height:auto;padding-top:86px}
+  .hero-content{padding:42px 0 64px}
+  .hero-eyebrow,
+  .sec-label,
+  .cierre-eyebrow{letter-spacing:2.6px}
+  .hero-title{font-size:clamp(58px,22vw,88px);letter-spacing:1px}
+  .hero-script{font-size:clamp(38px,12vw,56px);margin-bottom:22px}
+  .hero-tagline{font-size:15px;line-height:1.7;margin-bottom:28px}
+  .hero-tiers{gap:10px;margin-bottom:28px}
+  .tier-pill{width:100%;justify-content:center;padding:12px 18px}
+  .hero-stats{grid-template-columns:1fr}
+  .hero-stat{padding:16px}
+  .hero-stat-n{font-size:30px}
+
+  .gate-inner{padding:0 18px}
+  .gate-logos{gap:12px;flex-wrap:wrap}
+  .gate-title{font-size:42px}
+  .gate-script{font-size:32px}
+
+  .sec-sub,
+  .op-copy p,
+  .cierre-sub{font-size:14px;line-height:1.75}
+  .op-highlight,
+  .respuesta-box p{font-size:16px}
+  .op-card,
+  .prop-card,
+  .plan-col,
+  .contact-box{padding:22px}
+  .op-card{gap:14px}
+  .op-card-icon{width:38px;height:38px}
+
+  .plans-grid{grid-template-columns:1fr;margin-top:40px}
+  .poc{padding:28px 22px}
+  .poc-name{font-size:32px}
+  .poc-val{font-size:40px}
+  .poc-row{
+    flex-direction:column;align-items:flex-start;gap:2px;
+    padding:8px 0;
+  }
+
+  .plan-head{margin-bottom:32px}
+  .ptb-val{font-size:46px}
+  .plan-col-hd-v{font-size:24px}
+  .item-list li{
+    flex-wrap:wrap;
+  }
+  .li-val{
+    margin-left:28px;padding-left:0;white-space:normal;
+  }
+
+  .comp-wrap{
+    margin:40px -18px 0;padding:0 18px 10px;
+  }
+  table.comp{min-width:560px;font-size:12px}
+  table.comp thead th,
+  table.comp td,
+  .cat-row td{padding-left:14px;padding-right:14px}
+
+  .tl-wrap{margin-top:40px}
+  .tl-item{padding-left:68px}
+  .tl-dot{width:48px;height:48px;font-size:20px}
+  .tl-title{font-size:20px}
+  .tl-items{font-size:11.5px}
+
+  .cierre-plans{margin-bottom:40px}
+  .cierre-plan{width:100%;padding:14px 18px}
+  .cb-info,
+  .cb-info a{overflow-wrap:anywhere}
+}
+</style>
+</head>
+<body>
+
+<!-- ════ PASSWORD GATE ════ -->
+<div id="gate">
+  <div class="gate-glow"></div>
+  <div class="gate-grid"></div>
+  <div class="gate-inner">
+    <div class="gate-logos">
+      <div class="gate-logo-box bt"><img class="gate-logo-img" src="bodytech-logo.svg" alt="Bodytech"></div>
+      <span class="gate-x">×</span>
+      <div class="gate-logo-box kn">KIKA NIETO</div>
+    </div>
+    <div class="gate-eyebrow">Propuesta Confidencial · 2026</div>
+    <div class="gate-title">ALIANZA<br>ESTRATÉGICA</div>
+    <span class="gate-script">Bodytech × Kika Nieto</span>
+    <p class="gate-desc">Este documento es de uso exclusivo y confidencial.<br>Ingresa la clave de acceso para continuar.</p>
+    <div class="gate-divider"></div>
+    <input class="gate-input" id="gate-pw" type="password" placeholder="Clave de acceso" autocomplete="off">
+    <button class="gate-btn" onclick="checkPw()">Ingresar →</button>
+    <div class="gate-error" id="gate-err">Clave incorrecta. Intenta de nuevo.</div>
+    <p class="gate-note">Confidencial · Bodytech × Kika Nieto 2026</p>
+  </div>
+</div>
+
+<!-- ════ MAIN APP ════ -->
+<div id="app">
+
+  <!-- TOP NAV -->
+  <nav class="topnav">
+    <div class="topnav-brand">
+      <img class="topnav-logo" src="bodytech-logo.svg" alt="Bodytech">
+      <span class="topnav-s">×</span>
+      <span class="topnav-k">Kika Nieto</span>
+    </div>
+    <div class="topnav-right">
+      <span class="conf-badge">Confidencial</span>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="wrap">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          Propuesta Confidencial · Julio 2026
+        </div>
+        <h1 class="hero-title">ALIANZA<br>ESTRATÉGICA</h1>
+        <span class="hero-script">Bodytech × Kika Nieto</span>
+        <p class="hero-tagline">
+          Una marca que transforma cuerpos. Una comunidad que confía.<br>
+          <em>Una embajadora que convierte el bienestar en estilo de vida.</em>
+        </p>
+        <div class="hero-tiers">
+          <span class="tier-pill silver"><span class="tier-dot"></span>Plan Embajadora</span>
+          <span class="tier-pill gold"><span class="tier-dot"></span>Plan Embajadora Total</span>
+        </div>
+        <div class="hero-stats">
+          <!-- YouTube -->
+          <div class="hero-stat">
+            <div class="hero-stat-icon yt">
+              <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5v-7l6.25 3.5-6.25 3.5z"/></svg>
+            </div>
+            <div>
+              <div class="hero-stat-n">7.1M</div>
+              <div class="hero-stat-lbl">YouTube</div>
+              <div class="hero-stat-handle">@KikaNieto</div>
+            </div>
+          </div>
+          <!-- Instagram -->
+          <div class="hero-stat">
+            <div class="hero-stat-icon ig">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </div>
+            <div>
+              <div class="hero-stat-n">4.2M</div>
+              <div class="hero-stat-lbl">Instagram</div>
+              <div class="hero-stat-handle">@_kikanieto</div>
+            </div>
+          </div>
+          <!-- TikTok -->
+          <div class="hero-stat">
+            <div class="hero-stat-icon tk">
+              <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.79a8.18 8.18 0 004.77 1.52V6.86a4.85 4.85 0 01-1-.17z"/></svg>
+            </div>
+            <div>
+              <div class="hero-stat-n">4.2M</div>
+              <div class="hero-stat-lbl">TikTok</div>
+              <div class="hero-stat-handle">@kikanieto</div>
+            </div>
+          </div>
+          <!-- Facebook -->
+          <div class="hero-stat">
+            <div class="hero-stat-icon fb">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </div>
+            <div>
+              <div class="hero-stat-n">4.1M</div>
+              <div class="hero-stat-lbl">Facebook</div>
+              <div class="hero-stat-handle">Kika Nieto</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ LA OPORTUNIDAD ══ -->
+  <section id="oportunidad">
+    <div class="wrap">
+      <span class="sec-label">La Oportunidad</span>
+      <h2 class="sec-title">EL MOMENTO<br>ES PERFECTO</h2>
+      <p class="sec-sub">Bodytech está lanzando su nueva app con planes de alimentación y entrenamiento personalizados. Ninguna creadora en Colombia puede contar esa historia con más cercanía y credibilidad que Kika Nieto.</p>
+      <div class="op-grid">
+        <div class="op-copy">
+          <p>Kika no es solo una influencer. Es la referente de lifestyle más cercana y genuina para millones de colombianas que la siguen desde hace años, que confían en su criterio y adoptan sus hábitos.</p>
+          <p>Bodytech lleva décadas siendo el club médico deportivo líder de la región. Hoy da un paso más allá del gimnasio: una app que acompaña a cada usuario con <strong>alimentación y entrenamiento personalizados</strong>. Ese salto necesita un rostro que lo haga humano, cotidiano y aspiracional — <strong>y eso es exactamente lo que Kika transmite a su comunidad.</strong></p>
+          <p>Una embajadora de marca no se elige por números: se elige por encaje. Kika vive el bienestar como estilo de vida y lo comunica sin poses, desde la vida real. <strong>Esta alianza nace de un encaje genuino, no de un cálculo.</strong></p>
+          <p>Bodytech tiene la oportunidad de entrar cada mes, de forma constante y natural, en la conversación de una comunidad de más de 19 millones de seguidores.</p>
+          <div class="op-highlight">
+            "Bodytech no necesita presentación — su trayectoria habla sola. Esta alianza conecta el lanzamiento de su app con una comunidad que ya está lista para escucharla, de la voz de una embajadora que la vive de verdad."
+          </div>
+        </div>
+        <div class="op-cards">
+          <div class="op-card">
+            <div class="op-card-icon">📱</div>
+            <div>
+              <div class="op-card-title">El lanzamiento perfecto para la app</div>
+              <div class="op-card-body">La nueva app de Bodytech con alimentación y entrenamiento personalizados necesita adopción. Kika la usará y la mostrará en su día a día, mes a mes.</div>
+            </div>
+          </div>
+          <div class="op-card">
+            <div class="op-card-icon">💛</div>
+            <div>
+              <div class="op-card-title">Audiencia aspiracional y comprometida</div>
+              <div class="op-card-body">19M+ seguidores en todas las plataformas. Una comunidad que no solo ve — decide y compra basada en lo que Kika muestra.</div>
+            </div>
+          </div>
+          <div class="op-card">
+            <div class="op-card-icon">🔁</div>
+            <div>
+              <div class="op-card-title">Presencia constante, no un one-shot</div>
+              <div class="op-card-body">Un modelo mensual de embajadora construye recordación real. La marca aparece de forma recurrente y orgánica, no como una pauta aislada.</div>
+            </div>
+          </div>
+          <div class="op-card">
+            <div class="op-card-icon">🏆</div>
+            <div>
+              <div class="op-card-title">Una alianza hecha a medida</div>
+              <div class="op-card-body">Esta propuesta fue construida exclusivamente para Bodytech. Porque creemos que su visión del bienestar es exactamente la que Kika vive — y la que su comunidad merece conocer.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ LO QUE BODYTECH BUSCA ══ -->
+  <section id="bt-propuesta">
+    <div class="wrap">
+      <span class="sec-label">Lo que Bodytech busca</span>
+      <h2 class="sec-title">UNA EMBAJADORA<br>DE MARCA</h2>
+      <p class="sec-sub">Bodytech quiere que Kika Nieto sea embajadora integral de la marca y el rostro del lanzamiento de su nueva app. Revisamos ese objetivo con detalle y diseñamos un modelo que lo hace posible — y sostenible en el tiempo.</p>
+      <div class="prop-card">
+        <div class="prop-grid">
+          <div class="prop-col">
+            <h4>El objetivo de Bodytech</h4>
+            <div class="prop-item"><span class="pi-num">1</span><span><strong style="color:rgba(255,255,255,.8)">Embajadora integral de marca</strong><br>Kika como rostro de Bodytech: una voz constante y creíble que represente el estilo de vida Bodytech ante su comunidad.</span></div>
+            <div class="prop-item"><span class="pi-num">2</span><span><strong style="color:rgba(255,255,255,.8)">Lanzamiento de la app Bodytech</strong><br>Impulsar la nueva aplicación con planes de alimentación y entrenamiento personalizados, generando descargas y adopción.</span></div>
+            <div class="prop-item"><span class="pi-num">3</span><span><strong style="color:rgba(255,255,255,.8)">Presencia recurrente en Instagram</strong><br>Contenido mensual que mantenga a Bodytech en la conversación de la audiencia de Kika durante todo el año.</span></div>
+            <div class="prop-item"><span class="pi-num">4</span><span><strong style="color:rgba(255,255,255,.8)">Autenticidad ante todo</strong><br>Que la embajadora use la app y viva la marca de verdad — no una pauta puntual, sino una historia continua.</span></div>
+          </div>
+          <div class="prop-col">
+            <h4>Nuestro modelo de embajadora</h4>
+            <div class="prop-item"><span class="pi-num" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.5)">→</span><span>Esquema de <strong style="color:rgba(255,255,255,.8)">membresía + fee mensual</strong> — Kika entrena en Bodytech con membresía activa y produce contenido mensual para Instagram.</span></div>
+            <div class="prop-item"><span class="pi-num" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.5)">→</span><span>Integración orgánica de la app en su rutina real: entrenamientos, alimentación y progreso documentados desde la experiencia genuina.</span></div>
+            <div class="prop-item"><span class="pi-num" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.5)">→</span><span>Tarifa mensual preferencial de embajadora — muy por debajo del valor comercial de tarifario, porque una alianza de largo plazo se construye distinto.</span></div>
+            <div class="prop-item"><span class="pi-num" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.5)">→</span><span>Menciones, etiquetado y amplificación de @bodytech en cada pieza publicada.</span></div>
+          </div>
+        </div>
+        <div class="respuesta-box">
+          <p>Entendemos lo que Bodytech quiere construir. <span class="o">Y creemos que el formato correcto es una embajadora mensual, constante y creíble.</span> Por eso diseñamos <span class="y">dos planes</span> con tarifa preferencial frente al tarifario comercial 2026.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PLANES RESUMEN ══ -->
+  <section id="planes">
+    <div class="wrap">
+      <span class="sec-label">Nuestra Respuesta</span>
+      <h2 class="sec-title">DOS PLANES.<br>UNA EMBAJADORA.</h2>
+      <p class="sec-sub">Dos niveles de alianza mensual. Ambos incluyen la membresía de Kika en Bodytech y contenido recurrente en Instagram con tarifa preferencial de embajadora — muy por debajo del tarifario comercial.</p>
+      <div class="plans-grid">
+
+        <!-- EMBAJADORA -->
+        <div class="poc silver">
+          <div class="poc-tier">Plan</div>
+          <div class="poc-name">EMBAJADORA</div>
+          <div class="poc-label">Fee mensual Bodytech</div>
+          <div class="poc-val">$4.25M</div>
+          <div class="poc-sub">COP / mes · 1 Historia IG mensual</div>
+          <div class="poc-divider"></div>
+          <div class="poc-row"><span>Valor comercial tarifario</span><span class="poc-row-val">$6.53M COP</span></div>
+          <div class="poc-row"><span>Descuento embajadora</span><span class="poc-row-val">35%</span></div>
+          <div class="poc-row"><span>Historia IG mensual</span><span class="poc-row-val">1 / mes</span></div>
+          <div class="poc-row"><span>Post fijo en feed</span><span class="poc-row-val" style="color:rgba(255,255,255,.3)">No</span></div>
+          <div class="poc-row"><span>Membresía Bodytech</span><span class="poc-row-val">Incluida</span></div>
+          <div class="poc-count">Bodytech invierte <span>$4.25M/mes</span> · Recibe <span>$6.53M</span> en valor</div>
+        </div>
+
+        <!-- EMBAJADORA TOTAL -->
+        <div class="poc gold">
+          <div class="poc-rec">RECOMENDADO</div>
+          <div class="poc-tier">Plan</div>
+          <div class="poc-name">EMBAJADORA TOTAL</div>
+          <div class="poc-label">Fee mensual Bodytech</div>
+          <div class="poc-val">$8.11M</div>
+          <div class="poc-sub">COP / mes · 1 Historia + 1 Post fijo IG</div>
+          <div class="poc-divider"></div>
+          <div class="poc-row"><span>Valor comercial tarifario</span><span class="poc-row-val">$14.06M COP</span></div>
+          <div class="poc-row"><span>Descuento embajadora</span><span class="poc-row-val">42%</span></div>
+          <div class="poc-row"><span>Historia IG mensual</span><span class="poc-row-val">1 / mes</span></div>
+          <div class="poc-row"><span>Post fijo en feed</span><span class="poc-row-val">1 / mes · Permanente</span></div>
+          <div class="poc-row"><span>Membresía Bodytech</span><span class="poc-row-val">Incluida</span></div>
+          <div class="poc-count">Bodytech invierte <span>$8.11M/mes</span> · Recibe <span>$14.06M</span> en valor</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PLAN EMBAJADORA DETALLE ══ -->
+  <section class="plan-detail silver-bg silver">
+    <div class="wrap">
+      <div class="plan-head">
+        <div>
+          <div class="plan-badge"><span class="tier-dot"></span>Plan Embajadora</div>
+          <h2 class="sec-title" style="font-size:clamp(36px,4.5vw,60px)">PRESENCIA<br>MENSUAL</h2>
+          <p class="sec-sub" style="max-width:480px">La puerta de entrada a la alianza. Kika entrena en Bodytech, usa la app y publica cada mes una Historia en Instagram integrando la marca en su vida real.</p>
+        </div>
+        <div class="plan-total-box">
+          <div class="ptb-label">Fee mensual</div>
+          <div class="ptb-val">$4.25M</div>
+          <div class="ptb-sub">COP / mes · Valor comercial: $6.53M</div>
+        </div>
+      </div>
+      <div class="plan-cols">
+        <div class="plan-col">
+          <div class="plan-col-hd">
+            <span class="plan-col-hd-t">Contenido mensual</span>
+            <span class="plan-col-hd-v">1 PIEZA</span>
+          </div>
+          <ul class="item-list">
+            <li><span class="li-icon">✓</span>1 Historia IG mensual (ráfaga 45 seg) con mención directa de @bodytech<span class="li-val">$6.53M valor</span></li>
+            <li><span class="li-icon">✓</span>Integración de la app Bodytech: rutinas, alimentación o progreso real</li>
+            <li><span class="li-icon">✓</span>Etiquetado, mención y sticker de enlace a descarga de la app</li>
+            <li><span class="li-icon">✓</span>Contenido alineado al calendario de campañas de Bodytech</li>
+          </ul>
+        </div>
+        <div class="plan-col">
+          <div class="plan-col-hd">
+            <span class="plan-col-hd-t">Condiciones</span>
+            <span class="plan-col-hd-v">EMBAJADORA</span>
+          </div>
+          <ul class="item-list">
+            <li><span class="li-icon">✓</span>Membresía Bodytech mensual activa para Kika Nieto<span class="li-val">Incluida</span></li>
+            <li><span class="li-icon">✓</span>Uso genuino y constante de la app y las sedes</li>
+            <li><span class="li-icon">✓</span>Exclusividad de categoría: ningún otro gimnasio o app fitness</li>
+            <li><span class="li-icon">✓</span>Facturación mensual · Vigencia sugerida 12 meses</li>
+          </ul>
+          <div class="plan-nota"><strong>Tarifa preferencial:</strong> el tarifario comercial 2026 valora esta pieza en $6.530.000 COP. Como embajadora, Bodytech la recibe en $4.250.000 COP — un ahorro del 35% mensual.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PLAN EMBAJADORA TOTAL DETALLE ══ -->
+  <section class="plan-detail gold-bg gold">
+    <div class="wrap">
+      <div class="plan-head">
+        <div>
+          <div class="plan-badge"><span class="tier-dot"></span>Plan Embajadora Total · Recomendado</div>
+          <h2 class="sec-title" style="font-size:clamp(36px,4.5vw,60px)">MARCA<br>SIEMPRE VISIBLE</h2>
+          <p class="sec-sub" style="max-width:480px">El plan de embajadora completa. A la Historia mensual se suma un Post fijo en el feed de Instagram — contenido permanente que sigue trabajando para Bodytech todos los días del mes.</p>
+        </div>
+        <div class="plan-total-box">
+          <div class="ptb-label">Fee mensual</div>
+          <div class="ptb-val">$8.11M</div>
+          <div class="ptb-sub">COP / mes · Valor comercial: $14.06M</div>
+        </div>
+      </div>
+      <div class="plan-cols">
+        <div class="plan-col">
+          <div class="plan-col-hd">
+            <span class="plan-col-hd-t">Contenido mensual</span>
+            <span class="plan-col-hd-v">2 PIEZAS</span>
+          </div>
+          <ul class="item-list">
+            <li><span class="li-icon">✓</span>1 Historia IG mensual (ráfaga 45 seg) con mención directa de @bodytech<span class="li-val">$6.53M valor</span></li>
+            <li><span class="li-icon">✓</span>1 Foto Post fijo en feed IG — permanece en el perfil de Kika<span class="li-val">$7.53M valor</span></li>
+            <li><span class="li-icon">✓</span>Integración de la app Bodytech: rutinas, alimentación y progreso real</li>
+            <li><span class="li-icon">✓</span>Etiquetado, mención y sticker de enlace a descarga de la app</li>
+            <li><span class="li-icon">✓</span>Contenido alineado al calendario de campañas de Bodytech</li>
+          </ul>
+        </div>
+        <div class="plan-col">
+          <div class="plan-col-hd">
+            <span class="plan-col-hd-t">Condiciones</span>
+            <span class="plan-col-hd-v">EMBAJADORA TOTAL</span>
+          </div>
+          <ul class="item-list">
+            <li><span class="li-icon">✓</span>Membresía Bodytech mensual activa para Kika Nieto<span class="li-val">Incluida</span></li>
+            <li><span class="li-icon">✓</span>Uso genuino y constante de la app y las sedes</li>
+            <li><span class="li-icon">✓</span>Exclusividad de categoría: ningún otro gimnasio o app fitness</li>
+            <li><span class="li-icon">✓</span>Post permanente en el feed — visibilidad continua ante 4.2M seguidores</li>
+            <li><span class="li-icon">✓</span>Facturación mensual · Vigencia sugerida 12 meses</li>
+          </ul>
+          <div class="plan-nota"><strong>Tarifa preferencial:</strong> el tarifario comercial 2026 valora estas dos piezas en $14.060.000 COP. Como embajadora, Bodytech las recibe en $8.110.000 COP — un ahorro del 42% mensual.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TABLA COMPARATIVA ══ -->
+  <section id="tabla">
+    <div class="wrap">
+      <span class="sec-label">Comparativa</span>
+      <h2 class="sec-title">TODO SOBRE<br>LA MESA</h2>
+      <p class="sec-sub">Los dos planes lado a lado, con el valor comercial de tarifario 2026 como referencia. Sin letra pequeña.</p>
+      <div class="comp-wrap">
+        <table class="comp">
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th class="silver-h">Embajadora</th>
+              <th class="gold-h">Embajadora Total ★</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="cat-row"><td colspan="3">Inversión</td></tr>
+            <tr>
+              <td class="feat">Fee mensual Bodytech</td>
+              <td><span class="val-cell s">$4.25M</span></td>
+              <td class="gold-col"><span class="val-cell g">$8.11M</span></td>
+            </tr>
+            <tr>
+              <td class="feat">Valor comercial tarifario</td>
+              <td>$6.53M COP</td>
+              <td class="gold-col">$14.06M COP</td>
+            </tr>
+            <tr>
+              <td class="feat">Descuento embajadora</td>
+              <td>35%</td>
+              <td class="gold-col" style="font-weight:700;color:var(--gold-c)">42%</td>
+            </tr>
+
+            <tr class="cat-row"><td colspan="3">Contenido mensual en Instagram</td></tr>
+            <tr>
+              <td class="feat">Historia IG (ráfaga 45 seg)</td>
+              <td><span class="chk">✓</span> 1 / mes</td>
+              <td class="gold-col"><span class="chk">✓</span> 1 / mes</td>
+            </tr>
+            <tr>
+              <td class="feat">Foto Post fijo en feed</td>
+              <td><span class="crs">✕</span></td>
+              <td class="gold-col"><span class="chk">✓</span> 1 / mes · Permanente</td>
+            </tr>
+            <tr>
+              <td class="feat">Mención y etiquetado @bodytech</td>
+              <td><span class="chk">✓</span></td>
+              <td class="gold-col"><span class="chk">✓</span></td>
+            </tr>
+            <tr>
+              <td class="feat">Enlace a descarga de la app</td>
+              <td><span class="chk">✓</span></td>
+              <td class="gold-col"><span class="chk">✓</span></td>
+            </tr>
+
+            <tr class="cat-row"><td colspan="3">Embajadora</td></tr>
+            <tr>
+              <td class="feat">Membresía Bodytech para Kika</td>
+              <td><span class="chk">✓</span> Incluida</td>
+              <td class="gold-col"><span class="chk">✓</span> Incluida</td>
+            </tr>
+            <tr>
+              <td class="feat">Uso real de la app (alimentación + entrenamiento)</td>
+              <td><span class="chk">✓</span></td>
+              <td class="gold-col"><span class="chk">✓</span></td>
+            </tr>
+            <tr>
+              <td class="feat">Exclusividad de categoría fitness</td>
+              <td><span class="chk">✓</span></td>
+              <td class="gold-col"><span class="chk">✓</span></td>
+            </tr>
+            <tr>
+              <td class="feat">Piezas publicadas al año</td>
+              <td>12 historias</td>
+              <td class="gold-col" style="font-weight:700;color:var(--gold-c)">12 historias + 12 posts fijos</td>
+            </tr>
+
+            <tr class="cat-row"><td colspan="3">Resumen anual</td></tr>
+            <tr>
+              <td class="feat">Inversión anual Bodytech</td>
+              <td><span class="val-cell s">$51.0M</span></td>
+              <td class="gold-col"><span class="val-cell g">$97.3M</span></td>
+            </tr>
+            <tr>
+              <td class="feat">Valor comercial anual recibido</td>
+              <td>$78.4M COP</td>
+              <td class="gold-col" style="font-weight:700;color:var(--gold-c)">$168.7M COP</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CÓMO FUNCIONA ══ -->
+  <section id="cronograma">
+    <div class="wrap">
+      <span class="sec-label">Cómo funciona</span>
+      <h2 class="sec-title">UN MES TIPO<br>DE LA ALIANZA</h2>
+      <p class="sec-sub">La alianza opera en un ciclo mensual simple y repetible. Cada mes, Bodytech aparece de forma orgánica en la vida de Kika — y en la pantalla de millones de seguidores.</p>
+      <div class="tl-wrap">
+        <div class="tl-line"></div>
+        <div class="tl-grid">
+          <div class="tl-item">
+            <div class="tl-dot">1</div>
+            <div class="tl-month">Semana 1</div>
+            <div class="tl-title">BRIEF Y<br>ALINEACIÓN</div>
+            <ul class="tl-items">
+              <li>Foco del mes con Bodytech</li>
+              <li>Campañas y fechas clave</li>
+              <li>Funcionalidades de la app a destacar</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">2</div>
+            <div class="tl-month">Semana 2</div>
+            <div class="tl-title">VIVENCIA<br>REAL</div>
+            <ul class="tl-items">
+              <li>Kika entrena en Bodytech</li>
+              <li>Usa la app: alimentación + rutinas</li>
+              <li>Captura de contenido natural</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">3</div>
+            <div class="tl-month">Semana 3</div>
+            <div class="tl-title">PUBLICACIÓN</div>
+            <ul class="tl-items">
+              <li>Historia IG con @bodytech</li>
+              <li>Post fijo en feed (Plan Total)</li>
+              <li>Enlace a descarga de la app</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">4</div>
+            <div class="tl-month">Semana 4</div>
+            <div class="tl-title">RESULTADOS</div>
+            <ul class="tl-items">
+              <li>Métricas de alcance e interacción</li>
+              <li>Reporte mensual a Bodytech</li>
+              <li>Aprendizajes para el mes siguiente</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CIERRE ══ -->
+  <section id="cierre">
+    <div class="cierre-bg"></div>
+    <div class="wrap">
+      <div class="cierre-eyebrow">El próximo paso</div>
+      <h2 class="cierre-title">¿POR CUÁL<br>NOS DECIDIMOS?</h2>
+      <span class="cierre-script">La alianza ya tiene nombre.</span>
+      <p class="cierre-sub">
+        Dos planes, un mismo espíritu: Kika como embajadora real de Bodytech y de su nueva app. Cada opción está construida para que la marca entre, mes a mes, en una conversación que su audiencia ya quiere tener.
+      </p>
+      <div class="cierre-plans">
+        <div class="cierre-plan silver">Embajadora<br><small style="font-size:9px;letter-spacing:1px;color:rgba(184,196,212,.6)">$4.25M / mes · Historia IG mensual</small></div>
+        <div class="cierre-plan gold">Embajadora Total<br><small style="font-size:9px;letter-spacing:1px;color:rgba(240,192,64,.6)">$8.11M / mes · Historia + Post fijo</small></div>
+      </div>
+      <div class="contacts-grid">
+        <div class="contact-box">
+          <div class="cb-label">Por parte de Kika Nieto</div>
+          <div class="cb-name">Equipo Kika Nieto</div>
+          <div class="cb-role">Negociaciones & Alianzas Comerciales</div>
+          <div class="cb-info">
+            <a href="mailto:kikanieto.negocios@gmail.com">kikanieto.negocios@gmail.com</a><br>
+            @_kikanieto · @KikaNieto<br>
+            @kikanieto
+          </div>
+        </div>
+        <div class="contact-box">
+          <div class="cb-label">Por parte de Bodytech</div>
+          <div class="cb-name">Equipo Bodytech</div>
+          <div class="cb-role">Mercadeo & Alianzas · Bodytech</div>
+          <div class="cb-info">
+            www.bodytech.com.co<br>
+            @bodytech<br>
+            Colombia
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>Bodytech × Kika Nieto — Propuesta Confidencial 2026</span>
+    <span>Todos los valores en COP · Sin IVA · Sujeto a negociación</span>
+  </footer>
+
+</div><!-- /#app -->
+
+<script>
+(function(){
+  var PASS = 'alianza2026';
+  var key  = 'bodytech_kn_auth';
+
+  if(localStorage.getItem(key) === '1'){
+    show();
+  }
+
+  document.getElementById('gate-pw').addEventListener('keydown',function(e){
+    if(e.key==='Enter') checkPw();
+  });
+
+  window.checkPw = function(){
+    var val = document.getElementById('gate-pw').value.trim().toLowerCase();
+    if(val === PASS){
+      localStorage.setItem(key,'1');
+      show();
+    } else {
+      var err = document.getElementById('gate-err');
+      err.style.display = 'block';
+      document.getElementById('gate-pw').value = '';
+      document.getElementById('gate-pw').focus();
+      setTimeout(function(){ err.style.display='none'; }, 3500);
+    }
+  };
+
+  function show(){
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('app').style.display  = 'block';
+    document.body.style.overflow = '';
+  }
+})();
+</script>
+
+</body>
+</html>
