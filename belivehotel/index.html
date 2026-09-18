@@ -265,6 +265,19 @@ section{position:relative;overflow:hidden}
 .star-t{font-family:'Bebas Neue',sans-serif;font-size:28px;color:#fff;line-height:1;margin-bottom:6px}
 .star-b{font-size:13px;color:var(--muted);line-height:1.65}
 
+.deliv-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:60px}
+.dcard{border-radius:22px;padding:30px 26px;border:1px solid var(--border);background:rgba(255,255,255,.035);position:relative;overflow:hidden}
+.dcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--neon),transparent)}
+.dcard:nth-child(2)::before{background:linear-gradient(90deg,var(--bl),transparent)}
+.dcard:nth-child(3)::before{background:linear-gradient(90deg,var(--violet),transparent)}
+.dcard:nth-child(4)::before{background:linear-gradient(90deg,#FFB23E,transparent)}
+.dcard-q{font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:1;color:#fff;margin-bottom:10px}
+.dcard-t{font-size:14px;font-weight:700;color:#fff;margin-bottom:6px}
+.dcard-b{font-size:12.5px;color:var(--muted);line-height:1.65}
+.value-note{margin-top:22px;font-size:11.5px;color:rgba(255,255,255,.4);line-height:1.7;max-width:900px}
+.value-note b{color:rgba(255,255,255,.7);font-weight:600}
+.dir-to{margin-top:22px;font-size:12px;color:var(--muted);letter-spacing:.3px}
+.dir-to b{color:#fff;font-weight:600}
 /* ── BENEFICIOS ── */
 .ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:60px}
 .ben{padding:28px 26px;border-radius:20px;border:1px solid var(--border);background:rgba(255,255,255,.03)}
@@ -341,7 +354,7 @@ section{position:relative;overflow:hidden}
   .cast.k{grid-column:1/-1}
   .concept-steps{grid-template-columns:1fr 1fr}
   .days{grid-template-columns:1fr 1fr}
-  .spaces,.ben-grid{grid-template-columns:1fr 1fr}
+  .spaces,.ben-grid,.deliv-cards{grid-template-columns:1fr 1fr}
   .footer{flex-direction:column;align-items:flex-start}
 }
 @media (max-width:640px){
@@ -355,7 +368,7 @@ section{position:relative;overflow:hidden}
   .hero-stat{border-right:none;margin:0;padding:0}
   .sec-sub,.op-copy p,.cierre-sub{font-size:14px}
   .concept{padding:32px 22px}
-  .concept-steps,.cast-grid,.days,.spaces,.ben-grid{grid-template-columns:1fr}
+  .concept-steps,.cast-grid,.days,.spaces,.ben-grid,.deliv-cards{grid-template-columns:1fr}
   .cast,.dcol,.give,.contact-box{padding:24px 22px}
   .star{flex-direction:column;align-items:flex-start;padding:22px}
   .next div{width:100%}
@@ -400,6 +413,7 @@ section{position:relative;overflow:hidden}
           <span class="meta-pill"><b>1–2</b> canciones</span>
           <span class="meta-pill">El Poblado · Medellín</span>
         </div>
+        <p class="dir-to">Preparada para <b>Isabel González</b> · Be Live Hotel</p>
         <div class="hero-stats">
           <div class="hero-stat"><div class="hero-stat-n">7M</div><div class="hero-stat-lbl">YouTube</div></div>
           <div class="hero-stat"><div class="hero-stat-n">4M</div><div class="hero-stat-lbl">Instagram</div></div>
@@ -516,7 +530,7 @@ section{position:relative;overflow:hidden}
       <div class="crew-icon">🎥</div>
       <div>
         <div class="crew-t">Equipo de producción de Kika · 2 personas</div>
-        <div class="crew-b">Acompañan toda la semana para registrar el proceso: cámara, sonido y dirección de contenido para las historias, los reels y el video de YouTube. Así el hotel queda retratado con calidad cinematográfica, no solo con el celular.</div>
+        <div class="crew-b">Acompañan toda la semana para registrar el proceso: cámara, sonido y dirección de contenido para las historias, el reel y el video de YouTube. Así el hotel queda retratado con calidad cinematográfica, no solo con el celular.</div>
       </div>
     </div>
   </div>
@@ -527,7 +541,7 @@ section{position:relative;overflow:hidden}
   <div class="wrap">
     <span class="sec-label">La semana</span>
     <h2 class="sec-title rv">CINCO DÍAS<br>EN BE LIVE</h2>
-    <p class="sec-sub rv">Esta es una ruta tentativa, que construiremos junto con Mario Vega y el equipo de la Casa Musical. Cada día muestra un espacio distinto del hotel y deja contenido publicado.</p>
+    <p class="sec-sub rv">Esta es una ruta tentativa, que construiremos junto con Mario Vega y el equipo de la Casa Musical. Cada día muestra un espacio distinto del hotel.</p>
     <div class="days">
       <div class="day rv">
         <div class="day-date"><span class="day-n">19</span><span class="day-m">Oct</span></div>
@@ -538,7 +552,7 @@ section{position:relative;overflow:hidden}
           <li>Recorrido por la Casa Musical</li>
           <li>Primera reunión creativa: ¿qué canción queremos hacer?</li>
         </ul>
-        <div class="day-out"><b>Sale al aire</b>Historias: "Llegamos a Be Live"</div>
+        <div class="day-out"><b>Sale al aire</b>Historia 1: "Llegamos a Be Live"</div>
       </div>
       <div class="day rv">
         <div class="day-date"><span class="day-n">20</span><span class="day-m">Oct</span></div>
@@ -549,7 +563,6 @@ section{position:relative;overflow:hidden}
           <li>Primera clase de técnica vocal</li>
           <li>Maqueta en sala de ensayo</li>
         </ul>
-        <div class="day-out"><b>Sale al aire</b>Historias + adelanto de la letra</div>
       </div>
       <div class="day rv">
         <div class="day-date"><span class="day-n">21</span><span class="day-m">Oct</span></div>
@@ -560,7 +573,7 @@ section{position:relative;overflow:hidden}
           <li>Músicos de la Casa Musical se suman</li>
           <li>Segunda clase vocal</li>
         </ul>
-        <div class="day-out"><b>Sale al aire</b>Reel: "Así se hace una canción"</div>
+        <div class="day-out"><b>Sale al aire</b>Historia 2: así se arma la canción</div>
       </div>
       <div class="day rv">
         <div class="day-date"><span class="day-n">22</span><span class="day-m">Oct</span></div>
@@ -571,7 +584,7 @@ section{position:relative;overflow:hidden}
           <li>Sesión acústica en el rooftop</li>
           <li>Noche de tertulia musical</li>
         </ul>
-        <div class="day-out"><b>Sale al aire</b>Historias en vivo desde el estudio</div>
+        <div class="day-out"><b>Sale al aire</b>Historia 3: desde el control room</div>
       </div>
       <div class="day rv">
         <div class="day-date"><span class="day-n">23</span><span class="day-m">Oct</span></div>
@@ -582,7 +595,7 @@ section{position:relative;overflow:hidden}
           <li>Presentación íntima de la canción</li>
           <li>Cierre y despedida del hotel</li>
         </ul>
-        <div class="day-out"><b>Sale al aire</b>Reel collab: teaser de la canción</div>
+        <div class="day-out"><b>Se graba</b>El reel en collab con @belive.hotel</div>
       </div>
     </div>
     <p class="days-note">* La mezcla final, el máster y la fecha de lanzamiento de la canción se definirán en conjunto después de la residencia.</p>
@@ -611,30 +624,12 @@ section{position:relative;overflow:hidden}
   <div class="wrap">
     <span class="sec-label">Entregables</span>
     <h2 class="sec-title rv">EL CONTENIDO<br>DE LA RESIDENCIA</h2>
-    <p class="sec-sub rv">Propuesta inicial de piezas. Las cantidades exactas y los formatos se ajustan con el equipo de Be Live según sus objetivos de marketing.</p>
-    <div class="deliv-grid">
-      <div class="dcol rv">
-        <h4>Kika Nieto</h4>
-        <h3>@_kikanieto · YouTube · TikTok</h3>
-        <div class="ditem"><div class="ditem-q">1</div><div><div class="ditem-t">Video de YouTube documental</div><div class="ditem-b">Todo el proceso de lunes a viernes: el hotel, los artistas, el estudio y la canción. Es la pieza central de la alianza.</div></div></div>
-        <div class="ditem"><div class="ditem-q">2</div><div><div class="ditem-t">Reels en collab con @belive.hotel</div><div class="ditem-b">Aparecen tanto en el perfil de Kika como en el del hotel: "Así se hace una canción" y el teaser del lanzamiento.</div></div></div>
-        <div class="ditem"><div class="ditem-q">5</div><div><div class="ditem-t">Días de historias en Instagram</div><div class="ditem-b">Cobertura diaria de la residencia con etiqueta, ubicación y enlace a Be Live.</div></div></div>
-        <div class="ditem"><div class="ditem-q">1</div><div><div class="ditem-t">TikTok</div><div class="ditem-b">Un momento del proceso en formato corto y nativo de TikTok.</div></div></div>
-        <div class="ditem"><div class="ditem-q">1–2</div><div><div class="ditem-t">Canciones publicadas</div><div class="ditem-b">En plataformas digitales, con el crédito "Grabada en Be Live · Medellín".</div></div></div>
-      </div>
-      <div>
-        <div class="dcol b rv">
-          <h4>Artistas invitados</h4>
-          <h3>Silvana Palacios · Giovanni Olaya</h3>
-          <div class="ditem"><div class="ditem-q">1+1</div><div><div class="ditem-t">Reel en collab</div><div class="ditem-b">Un reel de cada artista, compartido con @belive.hotel y con Kika.</div></div></div>
-          <div class="ditem"><div class="ditem-q">✓</div><div><div class="ditem-t">Historias durante la semana</div><div class="ditem-b">Cada artista muestra la experiencia a su propia comunidad.</div></div></div>
-        </div>
-        <div class="dcol b rv" style="margin-top:20px">
-          <h4>Para Be Live</h4>
-          <h3>Material de marca</h3>
-          <div class="ditem"><div class="ditem-q">✓</div><div><div class="ditem-t">Banco de fotos y clips</div><div class="ditem-b">Material seleccionado del backstage para las redes del hotel. Los derechos de uso se acuerdan aparte.</div></div></div>
-        </div>
-      </div>
+    <p class="sec-sub rv">Cuatro entregables. Cada uno con Be Live en el centro de la historia.</p>
+    <div class="deliv-cards">
+      <div class="dcard rv"><div class="dcard-q">1</div><div class="dcard-t">Video de YouTube</div><div class="dcard-b">Un documental con todo el proceso de lunes a viernes: el hotel, los artistas, el estudio y la canción. Es la pieza central de la alianza.</div></div>
+      <div class="dcard rv"><div class="dcard-q">1</div><div class="dcard-t">Reel en collab</div><div class="dcard-b">Publicado con @belive.hotel, así que aparece tanto en el perfil de Kika como en el del hotel.</div></div>
+      <div class="dcard rv"><div class="dcard-q">3</div><div class="dcard-t">Historias en Instagram</div><div class="dcard-b">Durante la residencia, con etiqueta, ubicación y enlace a Be Live.</div></div>
+      <div class="dcard rv"><div class="dcard-q">1–2</div><div class="dcard-t">Canciones publicadas</div><div class="dcard-b">En plataformas digitales, con el crédito "Grabada en Be Live · Medellín".</div></div>
     </div>
     <div class="star rv">
       <div class="star-i"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5v-7l6.25 3.5-6.25 3.5z"/></svg></div>
@@ -643,6 +638,7 @@ section{position:relative;overflow:hidden}
         <div class="star-b">Muestra el hotel en funcionamiento, durante varios minutos y ante una audiencia que confía en Kika. Además, sigue sumando vistas en búsquedas como "estudio de grabación en Medellín" o "hotel para músicos" mucho después de la semana de la residencia.</div>
       </div>
     </div>
+    <p class="value-note rv">* Valor comercial aproximado del contenido según el tarifario 2026 de Kika Nieto: <b>$42.000.000 COP + IVA</b> (video de YouTube $12.000.000 · reel en collab $10.450.000 · 3 historias $19.590.000). No incluye las canciones.</p>
   </div>
 </section>
 
@@ -652,11 +648,11 @@ section{position:relative;overflow:hidden}
     <span class="sec-label">Qué gana Be Live</span>
     <h2 class="sec-title rv">MARKETING QUE<br>SE PUEDE ESCUCHAR</h2>
     <div class="ben-grid">
-      <div class="ben rv"><div class="ben-n">16M+</div><div class="ben-t">Alcance desde el primer mes</div><div class="ben-b">Be Live se presenta ante la comunidad de Kika, más los seguidores de Silvana y de Giovanni, justo en sus primeros meses de operación.</div></div>
+      <div class="ben rv"><div class="ben-n">16M+</div><div class="ben-t">Alcance desde el primer mes</div><div class="ben-b">Be Live se presenta ante la comunidad de Kika justo en sus primeros meses de operación.</div></div>
       <div class="ben rv"><div class="ben-n">3</div><div class="ben-t">Públicos distintos</div><div class="ben-b">Lifestyle y entretenimiento, nueva música y rock colombiano. Llega a tres audiencias que difícilmente se cruzan.</div></div>
       <div class="ben rv"><div class="ben-n">∞</div><div class="ben-t">Una canción con origen</div><div class="ben-b">Cada vez que alguien escuche la canción, su historia empieza en Be Live. Es un activo que no caduca.</div></div>
       <div class="ben rv"><div class="ben-n">1</div><div class="ben-t">Caso de éxito para vender</div><div class="ben-b">Una prueba concreta para mostrar a artistas, disqueras y agencias: "así se ve una residencia en Be Live".</div></div>
-      <div class="ben rv"><div class="ben-n">✓</div><div class="ben-t">Contenido para su equipo</div><div class="ben-b">Material profesional del hotel en uso, listo para sus redes, su web y sus presentaciones comerciales.</div></div>
+      <div class="ben rv"><div class="ben-n">YT</div><div class="ben-t">Un video que sigue sumando</div><div class="ben-b">El documental en YouTube se sigue viendo meses después y lleva nuevas personas al hotel en cada reproducción.</div></div>
       <div class="ben rv"><div class="ben-n">MDE</div><div class="ben-t">Medellín, ciudad para crear</div><div class="ben-b">Refuerza la visión de Be Live: que Medellín sea un destino para crear música y no solo para ir a conciertos.</div></div>
     </div>
   </div>
@@ -685,8 +681,8 @@ section{position:relative;overflow:hidden}
         <ul>
           <li><span class="chk">✓</span><span><b>Dirección creativa</b> de la residencia y del contenido.</span></li>
           <li><span class="chk">✓</span><span><b>Equipo de producción audiovisual</b> de 2 personas durante toda la semana.</span></li>
-          <li><span class="chk">✓</span><span><b>Video documental en YouTube</b>, reels, historias y TikTok.</span></li>
-          <li><span class="chk">✓</span><span><b>Artistas invitados</b> con su propia difusión en Instagram.</span></li>
+          <li><span class="chk">✓</span><span><b>Video documental en YouTube</b>, reel en collab y 3 historias en Instagram.</span></li>
+          <li><span class="chk">✓</span><span><b>Artistas invitados:</b> Silvana Palacios y Giovanni Olaya se suman a la residencia.</span></li>
           <li><span class="chk">✓</span><span><b>Crédito a Be Live</b> en la canción y en todas las piezas publicadas.</span></li>
           <li><span class="chk">✓</span><span><b>Reporte de resultados</b> con alcance, vistas e interacciones al cierre de la campaña.</span></li>
         </ul>
@@ -725,8 +721,8 @@ section{position:relative;overflow:hidden}
       </div>
       <div class="contact-box">
         <div class="cb-label">Por parte de Be Live</div>
-        <div class="cb-name">Héctor García · Mario Vega</div>
-        <div class="cb-role">Gerencia del hotel · Casa Musical Be Live</div>
+        <div class="cb-name">Isabel González</div>
+        <div class="cb-role">Be Live Hotel</div>
         <div class="cb-info">
           <a href="https://www.instagram.com/belive.hotel/" target="_blank" rel="noopener">@belive.hotel</a><br>
           El Poblado · Medellín
