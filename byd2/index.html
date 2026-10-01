@@ -877,18 +877,21 @@ details#catalog[open] summary i{transform:rotate(180deg)}
       'Valor a tarifa plena':s.tarifa_plena, 'Beneficio aplicado':s.beneficio, 'Inversión':s.inversion, 'Ahorro':s.ahorro,
       Origen:location.href
     };
+    if(location.protocol==='file:'){msg.className='req-msg err';msg.textContent='El envío solo funciona desde la página publicada (kikanieto.com/byd), no desde el archivo abierto en el computador.';return;}
     btn.disabled=true; btn.textContent='Enviando…';
     fetch('https://formsubmit.co/ajax/'+MAIL,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
-      .then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)==='false')throw new Error(j.message||'error');return j;});})
+      .then(function(r){return r.json().catch(function(){return {}}).then(function(j){if(!r.ok||String(j.success)==='false')throw new Error(j.message||('HTTP '+r.status));return j;});})
       .then(function(){
         msg.className='req-msg ok';msg.textContent='¡Solicitud enviada! El equipo de Kika los contactará muy pronto.';
         btn.textContent='Solicitud enviada';
       })
-      .catch(function(){
+      .catch(function(err){
+        try{console.warn('FormSubmit:',err&&err.message);}catch(x){}
         var body=Object.keys(data).filter(function(k){return k.charAt(0)!=='_'}).map(function(k){return k+': '+data[k]}).join('\n');
         var href='mailto:'+MAIL+'?subject='+encodeURIComponent(data._subject)+'&body='+encodeURIComponent(body);
         msg.className='req-msg err';
-        msg.innerHTML='No pudimos enviarla automáticamente. <a href="'+href+'">Envíenla por correo aquí</a> o escriban a '+MAIL+'.';
+        var why=err&&err.message&&/activ/i.test(err.message)?' (el formulario está pendiente de activación)':'';
+        msg.innerHTML='No pudimos enviarla automáticamente'+why+'. <a href="'+href+'">Envíenla por correo aquí</a> o escriban a '+MAIL+'.';
         btn.disabled=false; btn.textContent='Enviar solicitud';
       });
   });
