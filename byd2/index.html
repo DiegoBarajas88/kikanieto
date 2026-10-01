@@ -46,10 +46,10 @@ section{position:relative;overflow:hidden}
 .sec-sub{font-size:15px;font-weight:300;color:var(--muted);max-width:640px;line-height:1.8}
 .sec-sub strong{color:#fff;font-weight:600}
 .alt{background:var(--ink2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.pad{padding:96px 0}
+.pad{padding:130px 0}
 
 /* ── HERO ── */
-#hero{min-height:88vh;display:flex;align-items:center;padding-top:58px}
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:58px}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 30% 110%, rgba(229,0,18,.22) 0%, transparent 60%),radial-gradient(ellipse 45% 35% at 92% 10%, rgba(94,200,255,.10) 0%, transparent 60%),radial-gradient(ellipse 40% 30% at 5% 10%, rgba(232,255,0,.04) 0%, transparent 60%)}
 .road{position:absolute;left:0;right:0;bottom:0;height:3px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.35) 0 46px,transparent 46px 92px);animation:road 2.4s linear infinite;opacity:.5}
 @keyframes road{to{background-position:-92px 0}}
@@ -215,7 +215,7 @@ tr:last-child td{border-bottom:none}
 .ben-b{font-size:12.5px;color:var(--muted);line-height:1.65}
 
 /* ── CIERRE ── */
-#cierre{padding:100px 0;text-align:center}
+#cierre{padding:140px 0;text-align:center}
 .cierre-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 50%, rgba(229,0,18,.14) 0%, transparent 65%),radial-gradient(ellipse 40% 30% at 90% 10%, rgba(94,200,255,.07) 0%, transparent 60%)}
 .cierre-eyebrow{font-size:9px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:#FF4A55;margin-bottom:16px;position:relative}
 .cierre-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,8vw,110px);color:#fff;line-height:.86;margin-bottom:8px;position:relative}
@@ -300,14 +300,24 @@ details#catalog[open] summary i{transform:rotate(180deg)}
 @media (max-width:1024px){.builder{grid-template-columns:1fr}.mode{flex-direction:column;align-items:flex-start}}
 @media (max-width:640px){.seg button{padding:8px 11px;font-size:9.5px;letter-spacing:1px}.mode{padding:20px 18px}.mk-link{padding:20px 18px}}
 
-.why{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
-.why-c{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:18px;padding:22px 24px}
-.fl{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin-top:36px}
-.fl-i{padding:16px 0;border-top:1px solid var(--border)}
-.fl-i b{display:block;font-size:14px;color:#fff;font-weight:600;margin-bottom:2px}
-.fl-i span{font-size:12.5px;color:var(--muted);line-height:1.55}
-.fl-i a{color:#FF6A6A;text-decoration:none}
-@media (max-width:640px){.why,.fl{grid-template-columns:1fr}}
+.req{margin-top:16px;border-radius:20px;border:1px solid rgba(229,0,18,.3);background:linear-gradient(120deg,rgba(229,0,18,.08),rgba(255,255,255,.02));padding:20px 22px}
+.req-h b{display:block;font-family:'Bebas Neue',sans-serif;font-size:26px;font-weight:400;color:#fff;line-height:1}
+.req-h span{display:block;font-size:12px;color:var(--muted);margin:4px 0 14px}
+.req-g{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.req-g label{display:flex;flex-direction:column;gap:4px}
+.req-g label.full{grid-column:1/-1}
+.req-g span{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.req-g input,.req-g textarea{font-family:'Jost',sans-serif;font-size:13px;color:#fff;background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:10px;padding:10px 12px;outline:none;resize:vertical;width:100%}
+.req-g input:focus,.req-g textarea:focus{border-color:var(--byd)}
+.req-g input.bad{border-color:#FF4A55}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.req-btn{margin-top:14px;width:100%;font-family:'Jost',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:var(--byd);border:0;border-radius:999px;padding:15px 20px;cursor:pointer;transition:filter .2s,opacity .2s}
+.req-btn:hover{filter:brightness(1.12)}
+.req-btn:disabled{opacity:.55;cursor:default}
+.req-msg{font-size:12px;margin-top:10px;line-height:1.5;color:var(--muted);min-height:1em}
+.req-msg.ok{color:var(--neon)}.req-msg.err{color:#FF6A6A}
+.req-msg a{color:inherit}
+@media (max-width:640px){.req-g{grid-template-columns:1fr}.req{padding:18px 16px}}
 /* ── RESPONSIVE ── */
 @media (max-width:1024px){
   .topnav,.wrap,.footer{padding-left:32px;padding-right:32px}
@@ -356,6 +366,7 @@ details#catalog[open] summary i{transform:rotate(180deg)}
     <a href="#formatos">Formatos</a>
     <a href="#paquetes">Paquetes</a>
     <a href="#alianza">Arma tu alianza</a>
+    <a href="#mes">Un mes tipo</a>
   </div>
   <span class="conf-badge">Propuesta 2026</span>
 </nav>
@@ -369,7 +380,10 @@ details#catalog[open] summary i{transform:rotate(180deg)}
         <div class="hero-eyebrow"><span class="rec-dot"></span>Propuesta de alianza · Octubre 2026</div>
         <h1 class="hero-title">AL VOLANTE<br>CON KIKA</h1>
         <span class="hero-script">BYD × Kika Nieto</span>
-        <p class="hero-tagline">Kika ya maneja un BYD, viaja en él y graba dentro de él. Proponemos convertir esa realidad en una alianza constante, en cada plataforma.</p>
+        <p class="hero-tagline">
+          Kika ya vive su día a día en un BYD: lo maneja, lo viaja y graba dentro de él. Proponemos convertir esa realidad en una alianza constante, en cada plataforma.<br>
+          <em>Sin forzar el guion: el carro ya es parte de la historia que su comunidad ve todas las semanas.</em>
+        </p>
         <div class="hero-meta">
           <span class="meta-pill"><b>5</b> plataformas</span>
           <span class="meta-pill"><b>3</b> paquetes</span>
@@ -392,39 +406,135 @@ details#catalog[open] summary i{transform:rotate(180deg)}
   <div class="road"></div>
 </section>
 
-<!-- ══ POR QUÉ ══ -->
-<section id="porque" class="pad alt">
+<!-- ══ OPORTUNIDAD ══ -->
+<section id="oportunidad" class="pad alt">
   <div class="wrap">
-    <span class="sec-label">Por qué Kika + BYD</span>
+    <span class="sec-label">La oportunidad</span>
     <h2 class="sec-title rv">EL CARRO YA ESTÁ<br>EN LA HISTORIA</h2>
-    <p class="sec-sub rv">Kika maneja un BYD en su día a día y graba buena parte de sus vlogs dentro de él. <strong>Hablar de BYD no interrumpe su contenido, lo acompaña</strong>, frente a una audiencia joven en Colombia y México que le cree a quien ya usa el carro.</p>
-    <div class="why rv">
-      <div class="why-c"><div class="aud-n">16M<span>+</span></div><div class="aud-t">Comunidad en YouTube, Instagram, TikTok y Facebook.</div></div>
-      <div class="why-c"><div class="aud-n">89<span>%</span></div><div class="aud-t">De su audiencia en Instagram tiene entre 18 y 34 años.</div></div>
-      <div class="why-c"><div class="aud-n">61<span>%</span></div><div class="aud-t">De su audiencia en Instagram está en Colombia y México.</div></div>
+    <p class="sec-sub rv">La mayoría de las campañas de autos con creadores parten de cero: llega el carro, se graba la pieza y se devuelve. Con Kika es distinto: <strong>el BYD ya hace parte de su rutina</strong>, y eso se nota en pantalla.</p>
+    <div class="op-grid">
+      <div class="op-copy rv">
+        <p>Kika graba buena parte de sus vlogs dentro del carro: camino a una grabación, de viaje con la familia o conversando con su comunidad. Por eso <strong>hablar de BYD no interrumpe el contenido, lo acompaña</strong>.</p>
+        <p>Lo que proponemos es darle estructura a esa presencia. Que cada mes BYD aparezca en el formato correcto: historias que responden dudas reales sobre el carro, un vlog en TikTok desde los eventos de la marca, un carrusel que lo muestre por dentro y una mención en el canal de vlogs, donde la comunidad es más fiel.</p>
+        <p>Además, su audiencia es justo la que hoy está tomando decisiones de movilidad: <strong>adultos jóvenes en Colombia y México</strong> que comparan opciones, preguntan en comentarios y le creen a quien ya maneja el carro.</p>
+        <div class="op-highlight">"No se trata de que Kika hable de un carro. Se trata de que su comunidad vea cómo lo vive."</div>
+      </div>
+      <div class="aud rv">
+        <div class="aud-card">
+          <div class="aud-n">89<span>%</span></div>
+          <div class="aud-t">de su audiencia en Instagram tiene entre 18 y 34 años.</div>
+          <div class="bar"><i style="width:89.4%"></i></div>
+        </div>
+        <div class="aud-card">
+          <div class="aud-n">~93<span>%</span></div>
+          <div class="aud-t">mujeres: un público al que la categoría automotriz rara vez le habla de tú a tú.</div>
+          <div class="bar"><i style="width:93%"></i></div>
+        </div>
+        <div class="aud-card wide">
+          <div class="aud-t" style="margin:0 0 4px;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase">Top países · Instagram</div>
+          <div class="ctry">
+            <div class="ctry-row"><span>🇨🇴 Colombia</span><div class="bar" style="margin:0"><i style="width:84.6%"></i></div><b>42.3%</b></div>
+            <div class="ctry-row"><span>🇲🇽 México</span><div class="bar" style="margin:0"><i style="width:37.4%"></i></div><b>18.7%</b></div>
+            <div class="ctry-row"><span>🇪🇨 Ecuador</span><div class="bar" style="margin:0"><i style="width:9.4%"></i></div><b>4.7%</b></div>
+            <div class="ctry-row"><span>🇺🇸 EE. UU.</span><div class="bar" style="margin:0"><i style="width:8.2%"></i></div><b>4.1%</b></div>
+          </div>
+          <p class="src">Fuente: Media Kit 2026 de Kika Nieto · datos verificados de plataforma.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONCEPTO ══ -->
+<section id="concepto" class="pad">
+  <div class="wrap">
+    <span class="sec-label">El concepto</span>
+    <h2 class="sec-title rv">UNA CONVERSACIÓN<br>QUE NO SE APAGA</h2>
+    <p class="sec-sub rv">Cada formato cumple un papel distinto dentro del mes. Juntos llevan a la audiencia desde el primer "¿qué carro es ese?" hasta la visita al concesionario.</p>
+    <div class="concept rv">
+      <div class="concept-big">No es una pauta.<br>Es <span>la vida real de Kika</span>, con BYD al volante.</div>
+      <div class="concept-steps">
+        <div class="cstep"><div class="cstep-n">Etapa 1</div><div class="cstep-t">Mostrar</div><div class="cstep-b">El carro aparece en su contexto natural: vlogs, viajes y el día a día de Kika.</div></div>
+        <div class="cstep"><div class="cstep-n">Etapa 2</div><div class="cstep-t">Responder</div><div class="cstep-b">Las dudas de los seguidores se vuelven contenido: autonomía, espacio, comodidad, costos.</div></div>
+        <div class="cstep"><div class="cstep-n">Etapa 3</div><div class="cstep-t">Profundizar</div><div class="cstep-b">Anclamos lo que BYD quiera destacar en el momento: un lanzamiento, una tecnología, un evento.</div></div>
+        <div class="cstep"><div class="cstep-n">Etapa 4</div><div class="cstep-t">Amplificar</div><div class="cstep-b">El contenido también vive en la cuenta de BYD, con Kika como su cara comercial.</div></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ══ FORMATOS ══ -->
-<section id="formatos" class="pad">
+<section id="formatos" class="pad alt">
   <div class="wrap">
     <span class="sec-label">Formatos</span>
-    <h2 class="sec-title rv">CÓMO APARECE BYD</h2>
-    <div class="fl rv">
-      <div class="fl-i"><b>Historias · Respondiendo dudas</b><span>Kika responde las preguntas de su comunidad sobre el carro.</span></div>
-      <div class="fl-i"><b>Historias · Anclando contenidos</b><span>Empuje táctico a lo que BYD quiera resaltar en el momento.</span></div>
-      <div class="fl-i"><b>Historias · Viaje en carretera</b><span>Anécdotas reales: espacio, comodidad, ahorro y trocha.</span></div>
-      <div class="fl-i"><b>TikTok · Vlog en eventos</b><span>Lanzamientos, otros modelos y la experiencia BYD.</span></div>
-      <div class="fl-i"><b>Carrusel IG · Anatomía del carro</b><span>El mes de Kika, con un slide fijo del carro por dentro.</span></div>
-      <div class="fl-i"><b>YouTube · Mención en vlog</b><span>En El Diario de Kika, su canal más fiel. Referentes: <a href="https://youtu.be/VVOxR8Z2V2c" target="_blank" rel="noopener">video 1 ↗</a> · <a href="https://youtu.be/0KgmDxZKvjc" target="_blank" rel="noopener">video 2 ↗</a></span></div>
-      <div class="fl-i"><b>Cuenta de BYD</b><span>Videos ya editados para publicar en las redes de la marca.</span></div>
+    <h2 class="sec-title rv">OCHO MANERAS<br>DE CONTAR BYD</h2>
+    <p class="sec-sub rv">Formatos pensados para un carro, no adaptados de otra campaña. Cada paquete combina los que mejor se ajustan a la etapa de la alianza.</p>
+
+    <div class="fmt-group">
+      <div class="fmt-group-h"><span>Historias de Instagram</span></div>
+      <div class="fmt-grid">
+        <div class="fmt rv">
+          <div class="fmt-top"><span class="fmt-ch">Instagram · Historias</span><span class="fmt-tag">Mensual</span></div>
+          <div class="fmt-t">Respondiendo dudas</div>
+          <div class="fmt-b">Kika responde las preguntas que la comunidad deja sobre el carro: <em>cómo se carga, cuánto rinde, qué tal en ciudad, si vale la pena</em>. Respuestas de alguien que lo maneja todos los días.</div>
+          <div class="fmt-chips"><span>Q&amp;A</span><span>Confianza</span><span>Consideración</span></div>
+        </div>
+        <div class="fmt rv">
+          <div class="fmt-top"><span class="fmt-ch">Instagram · Historias</span><span class="fmt-tag">Mensual</span></div>
+          <div class="fmt-t">Anclando contenidos</div>
+          <div class="fmt-b">Se responde un comentario de un video ya publicado en otro formato donde aparece BYD. Sirve para <em>empujar lo que la marca quiera resaltar en ese momento</em> o profundizar en un tema.</div>
+          <div class="fmt-chips"><span>Push táctico</span><span>Mensaje clave</span></div>
+        </div>
+        <div class="fmt rv">
+          <div class="fmt-top"><span class="fmt-ch">Instagram · Historias</span><span class="fmt-tag bi">Bimestral · Oro</span></div>
+          <div class="fmt-t">Viaje en carretera</div>
+          <div class="fmt-b">Anécdotas reales de viajes en el BYD que muestran lo que una ficha técnica no cuenta: <em>espacio, comodidad, ahorro en el camino y cómo responde en trocha</em>.</div>
+          <div class="fmt-chips"><span>Storytelling</span><span>Prueba real</span></div>
+        </div>
+      </div>
     </div>
+
+    <div class="fmt-group">
+      <div class="fmt-group-h"><span>YouTube · TikTok · Feed</span></div>
+      <div class="fmt-grid two">
+        <div class="fmt y rv">
+          <div class="fmt-top"><span class="fmt-ch">YouTube · Canal de vlogs</span><span class="fmt-tag">Mensual</span></div>
+          <div class="fmt-t">Mención en vlog</div>
+          <div class="fmt-b">Una mención en <em>El Diario de Kika</em>, el canal donde la comunidad es más fiel y ve los videos completos. Como Kika graba mucho dentro del carro, la mención se siente orgánica. Así se ve hoy:</div>
+          <div class="refs">
+            <a class="ref" href="https://youtu.be/VVOxR8Z2V2c" target="_blank" rel="noopener"><div class="ref-img"><img src="https://i.ytimg.com/vi/VVOxR8Z2V2c/hqdefault.jpg" alt="De Enero aprendí" loading="lazy"></div><div class="ref-t"><b>Referente 1</b>De Enero aprendí…</div></a>
+            <a class="ref" href="https://youtu.be/0KgmDxZKvjc" target="_blank" rel="noopener"><div class="ref-img"><img src="https://i.ytimg.com/vi/0KgmDxZKvjc/hqdefault.jpg" alt="Vlogmas Día 21" loading="lazy"></div><div class="ref-t"><b>Referente 2</b>Los planes de Dios… · Vlogmas Día 21</div></a>
+          </div>
+        </div>
+        <div class="fmt t rv">
+          <div class="fmt-top"><span class="fmt-ch">TikTok</span><span class="fmt-tag">Mensual</span></div>
+          <div class="fmt-t">Vlog BYD en eventos</div>
+          <div class="fmt-b">Un vlog tiktokero asistiendo a eventos de la marca. La idea es mostrar no solo el carro de Kika, sino también <em>otros modelos, nuevos lanzamientos y la experiencia BYD</em>, en el formato de mayor descubrimiento.</div>
+          <div class="fmt-chips"><span>Lanzamientos</span><span>Portafolio</span><span>Alcance</span></div>
+        </div>
+        <div class="fmt c rv">
+          <div class="fmt-top"><span class="fmt-ch">Instagram · Carrusel</span><span class="fmt-tag">Mensual</span></div>
+          <div class="fmt-t">El mes de Kika + anatomía del carro</div>
+          <div class="fmt-b">Un carrusel con lo que Kika hizo en el mes. Es un formato que su comunidad desliza completo, y <em>queda fijo en el feed</em>.</div>
+          <div class="anatomy"><b>Siempre incluido</b>Un slide fijo con la anatomía del carro: espacio, tecnología y detalles que BYD quiera destacar ese mes.</div>
+        </div>
+        <div class="fmt rv">
+          <div class="fmt-top"><span class="fmt-ch">Cuenta de BYD</span><span class="fmt-tag bi">Oro</span></div>
+          <div class="fmt-t">Cara comercial de BYD</div>
+          <div class="fmt-b">Kika entrega <em>videos ya editados</em> para que BYD los publique en su propia cuenta. La marca gana una vocera reconocible y contenido listo para su comunidad, sin producción adicional.</div>
+          <div class="fmt-chips"><span>Vocería</span><span>Contenido listo</span><span>Canal propio</span></div>
+        </div>
+      </div>
+    </div>
+    <a class="mk-link rv" href="https://kikanieto.com/mediakit2026" target="_blank" rel="noopener">
+      <div><div class="mk-t">TARIFARIO 2026</div><div class="mk-b">Consulta todas las tarifas por pieza en el Media Kit de Kika Nieto. Se abre en una pestaña nueva.</div></div>
+      <span class="mk-go">Ver tarifario ↗</span>
+    </a>
   </div>
 </section>
 
 <!-- ══ PAQUETES ══ -->
-<section id="paquetes" class="pad alt">
+<section id="paquetes" class="pad">
   <div class="wrap">
     <span class="sec-label">Paquetes</span>
     <h2 class="sec-title rv">TRES RUTAS.<br>UN MISMO DESTINO.</h2>
@@ -444,12 +554,12 @@ details#catalog[open] summary i{transform:rotate(180deg)}
     </div>
 
     <div class="pk-grid" id="pkGrid"></div>
-    <p class="note rv">Valores en pesos colombianos (COP), antes de IVA (impuesto al valor agregado). En los planes de embajadora, el valor indicado corresponde a cada mes del plan. <a href="https://kikanieto.com/mediakit2026" target="_blank" rel="noopener">Ver tarifario 2026 ↗</a></p>
+    <p class="note rv">Valores en pesos colombianos (COP), antes de IVA (impuesto al valor agregado). En los planes de embajadora, el valor indicado corresponde a cada mes del plan.</p>
   </div>
 </section>
 
 <!-- ══ ARMA TU ALIANZA ══ -->
-<section id="alianza" class="pad">
+<section id="alianza" class="pad alt">
   <div class="wrap">
     <span class="sec-label">A la medida</span>
     <h2 class="sec-title rv">ARMA TU<br>ALIANZA</h2>
@@ -482,9 +592,83 @@ details#catalog[open] summary i{transform:rotate(180deg)}
           <div class="sum-save"><span id="cSaveL">Ahorro</span><b id="cSave">$0</b></div>
           <p class="sum-note" id="cNote">Desde $18,27M en acciones se activa el beneficio Bronce; desde $32,33M, Plata; y desde $39,06M, Oro.</p>
         </div>
+        <form class="req" id="reqForm" novalidate>
+          <div class="req-h"><b>¿Les gusta esta alianza?</b><span>Envíen la solicitud y el equipo de Kika los contactará para confirmarla.</span></div>
+          <div class="req-g">
+            <label><span>Nombre *</span><input name="nombre" required autocomplete="name"></label>
+            <label><span>Empresa</span><input name="empresa" value="BYD Colombia" autocomplete="organization"></label>
+            <label><span>Correo *</span><input name="correo" type="email" required autocomplete="email"></label>
+            <label><span>Teléfono</span><input name="telefono" type="tel" autocomplete="tel"></label>
+            <label class="full"><span>Comentarios</span><textarea name="comentarios" rows="2"></textarea></label>
+          </div>
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit" class="req-btn" id="reqBtn">Enviar solicitud</button>
+          <p class="req-msg" id="reqMsg" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </div>
     <p class="note rv">Tarifas tomadas del <a href="https://kikanieto.com/mediakit2026" target="_blank" rel="noopener">Media Kit 2026 de Kika Nieto ↗</a>. Valores en COP antes de IVA. La propuesta final se confirma con el equipo comercial.</p>
+  </div>
+</section>
+
+<!-- ══ MES TIPO ══ -->
+<section id="mes" class="pad">
+  <div class="wrap">
+    <span class="sec-label">Un mes tipo · Paquete Oro</span>
+    <h2 class="sec-title rv">ASÍ SE VE<br>UN MES CON BYD</h2>
+    <p class="sec-sub rv">Una ruta tentativa para distribuir las piezas a lo largo del mes, de modo que BYD esté presente todas las semanas. El calendario final se define en conjunto con el equipo de la marca.</p>
+    <div class="weeks">
+      <div class="week rv">
+        <div class="week-n">S1</div><div class="week-w">Semana 1 · Arranque</div>
+        <ul>
+          <li><b>Historias:</b> respondiendo dudas de la comunidad</li>
+          <li>Recolección de preguntas en comentarios y DM</li>
+        </ul>
+        <div class="week-out"><b>Objetivo</b>Abrir la conversación del mes</div>
+      </div>
+      <div class="week rv">
+        <div class="week-n">S2</div><div class="week-w">Semana 2 · Evento</div>
+        <ul>
+          <li><b>TikTok:</b> vlog en evento o lanzamiento BYD</li>
+          <li><b>Cuenta BYD:</b> entrega del video editado</li>
+        </ul>
+        <div class="week-out"><b>Objetivo</b>Mostrar portafolio y novedades</div>
+      </div>
+      <div class="week rv">
+        <div class="week-n">S3</div><div class="week-w">Semana 3 · Profundizar</div>
+        <ul>
+          <li><b>YouTube:</b> mención en el canal de vlogs</li>
+          <li><b>Historias:</b> anclando contenido sobre el mensaje del mes</li>
+        </ul>
+        <div class="week-out"><b>Objetivo</b>Reforzar el mensaje clave de BYD</div>
+      </div>
+      <div class="week rv">
+        <div class="week-n">S4</div><div class="week-w">Semana 4 · Cierre</div>
+        <ul>
+          <li><b>Carrusel:</b> el mes de Kika + anatomía del carro</li>
+          <li><b>Mes par:</b> historias de viaje en carretera</li>
+          <li>Reporte mensual de resultados</li>
+        </ul>
+        <div class="week-out"><b>Objetivo</b>Dejar una pieza fija en el feed</div>
+      </div>
+    </div>
+    <p class="weeks-note">* Bronce y Plata siguen la misma lógica con menos piezas. Las fechas se ajustan al calendario de eventos y lanzamientos de BYD.</p>
+  </div>
+</section>
+
+<!-- ══ BENEFICIOS ══ -->
+<section id="beneficios" class="pad alt">
+  <div class="wrap">
+    <span class="sec-label">Qué gana BYD</span>
+    <h2 class="sec-title rv">MÁS QUE ALCANCE,<br>CREDIBILIDAD</h2>
+    <div class="ben-grid">
+      <div class="ben rv"><div class="ben-n">16M+</div><div class="ben-t">Presencia en todo el ecosistema</div><div class="ben-b">YouTube, Instagram, TikTok y la propia cuenta de BYD, con una sola vocera y un mismo mensaje.</div></div>
+      <div class="ben rv"><div class="ben-n">1:1</div><div class="ben-t">Usuaria real, no actriz</div><div class="ben-b">Kika habla del carro que maneja. Esa diferencia es la que hace que la audiencia le crea.</div></div>
+      <div class="ben rv"><div class="ben-n">Q&amp;A</div><div class="ben-t">Objeciones resueltas en público</div><div class="ben-b">Las dudas de compra se responden en historias, donde miles de personas tienen la misma pregunta.</div></div>
+      <div class="ben rv"><div class="ben-n">CO·MX</div><div class="ben-t">Dos mercados clave</div><div class="ben-b">Colombia y México suman más del 60% de su audiencia en Instagram.</div></div>
+      <div class="ben rv"><div class="ben-n">∞</div><div class="ben-t">Contenido que se queda</div><div class="ben-b">El carrusel queda fijo en el feed y los vlogs de YouTube siguen sumando vistas meses después.</div></div>
+      <div class="ben rv"><div class="ben-n">KPI</div><div class="ben-t">Reporte mensual</div><div class="ben-b">Alcance, vistas e interacciones de cada pieza, con recomendaciones para el mes siguiente.</div></div>
+    </div>
   </div>
 </section>
 
@@ -659,6 +843,55 @@ details#catalog[open] summary i{transform:rotate(180deg)}
       (next?'Te faltan '+cop(next.min-full)+' en acciones para activar el beneficio '+next.n+'.':'Tu alianza ya tiene el beneficio más alto (nivel Oro).');
   }
   bindSeg('segCalc',function(m){calcM=m;calc();});
+
+  /* ── ENVIAR SOLICITUD ── */
+  var MAIL='kikacolaboraciones@gmail.com';
+  var form=document.getElementById('reqForm'), msg=document.getElementById('reqMsg'), btn=document.getElementById('reqBtn');
+  function summary(){
+    var full=order.reduce(function(s,id){return s+BY[id].p*cart[id]},0);
+    var lines=order.map(function(id){return '• '+cart[id]+' × '+BY[id].n+' ('+BY[id].g+') — '+cop(BY[id].p*cart[id])});
+    return {
+      acciones:lines.join('\n'),
+      modalidad:calcM===1?'Alianza única':'Plan de embajadora de '+calcM+' meses',
+      tarifa_plena:document.getElementById('cFull').textContent,
+      beneficio:document.getElementById('cTier').textContent,
+      inversion:document.getElementById('cInvL').textContent+': '+document.getElementById('cInv').textContent,
+      ahorro:document.getElementById('cSaveL').textContent+': '+document.getElementById('cSave').textContent,
+      full:full
+    };
+  }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    msg.className='req-msg';
+    var f=form.elements, ok=true;
+    ['nombre','correo'].forEach(function(n){var el=f[n];var v=el.value.trim();var bad=!v||(n==='correo'&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v));el.classList.toggle('bad',bad);if(bad)ok=false;});
+    if(!order.length){msg.className='req-msg err';msg.textContent='Agreguen al menos una acción a la alianza antes de enviar.';return;}
+    if(!ok){msg.className='req-msg err';msg.textContent='Revisen el nombre y el correo.';return;}
+    if(f._honey.value)return;
+    var s=summary();
+    var data={
+      _subject:'Solicitud de alianza BYD × Kika Nieto — '+f.nombre.value.trim(),
+      _template:'table', _captcha:'false', _replyto:f.correo.value.trim(),
+      Nombre:f.nombre.value.trim(), Empresa:f.empresa.value.trim(), Correo:f.correo.value.trim(), 'Teléfono':f.telefono.value.trim(),
+      Comentarios:f.comentarios.value.trim(), Modalidad:s.modalidad, Acciones:s.acciones,
+      'Valor a tarifa plena':s.tarifa_plena, 'Beneficio aplicado':s.beneficio, 'Inversión':s.inversion, 'Ahorro':s.ahorro,
+      Origen:location.href
+    };
+    btn.disabled=true; btn.textContent='Enviando…';
+    fetch('https://formsubmit.co/ajax/'+MAIL,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)==='false')throw new Error(j.message||'error');return j;});})
+      .then(function(){
+        msg.className='req-msg ok';msg.textContent='¡Solicitud enviada! El equipo de Kika los contactará muy pronto.';
+        btn.textContent='Solicitud enviada';
+      })
+      .catch(function(){
+        var body=Object.keys(data).filter(function(k){return k.charAt(0)!=='_'}).map(function(k){return k+': '+data[k]}).join('\n');
+        var href='mailto:'+MAIL+'?subject='+encodeURIComponent(data._subject)+'&body='+encodeURIComponent(body);
+        msg.className='req-msg err';
+        msg.innerHTML='No pudimos enviarla automáticamente. <a href="'+href+'">Envíenla por correo aquí</a> o escriban a '+MAIL+'.';
+        btn.disabled=false; btn.textContent='Enviar solicitud';
+      });
+  });
   calc();
 
   reveal(document.querySelectorAll('.rv'));
