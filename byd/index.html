@@ -300,24 +300,11 @@ details#catalog[open] summary i{transform:rotate(180deg)}
 @media (max-width:1024px){.builder{grid-template-columns:1fr}.mode{flex-direction:column;align-items:flex-start}}
 @media (max-width:640px){.seg button{padding:8px 11px;font-size:9.5px;letter-spacing:1px}.mode{padding:20px 18px}.mk-link{padding:20px 18px}}
 
-.req{margin-top:16px;border-radius:20px;border:1px solid rgba(229,0,18,.3);background:linear-gradient(120deg,rgba(229,0,18,.08),rgba(255,255,255,.02));padding:20px 22px}
-.req-h b{display:block;font-family:'Bebas Neue',sans-serif;font-size:26px;font-weight:400;color:#fff;line-height:1}
-.req-h span{display:block;font-size:12px;color:var(--muted);margin:4px 0 14px}
-.req-g{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.req-g label{display:flex;flex-direction:column;gap:4px}
-.req-g label.full{grid-column:1/-1}
-.req-g span{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
-.req-g input,.req-g textarea{font-family:'Jost',sans-serif;font-size:13px;color:#fff;background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:10px;padding:10px 12px;outline:none;resize:vertical;width:100%}
-.req-g input:focus,.req-g textarea:focus{border-color:var(--byd)}
-.req-g input.bad{border-color:#FF4A55}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-.req-btn{margin-top:14px;width:100%;font-family:'Jost',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:var(--byd);border:0;border-radius:999px;padding:15px 20px;cursor:pointer;transition:filter .2s,opacity .2s}
-.req-btn:hover{filter:brightness(1.12)}
-.req-btn:disabled{opacity:.55;cursor:default}
-.req-msg{font-size:12px;margin-top:10px;line-height:1.5;color:var(--muted);min-height:1em}
-.req-msg.ok{color:var(--neon)}.req-msg.err{color:#FF6A6A}
-.req-msg a{color:inherit}
-@media (max-width:640px){.req-g{grid-template-columns:1fr}.req{padding:18px 16px}}
+.req{margin-top:14px}
+.req-btn{width:100%;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:transparent;border:1px solid rgba(229,0,18,.55);border-radius:999px;padding:13px 20px;cursor:pointer;transition:background .2s,border-color .2s}
+.req-btn:hover{background:var(--byd);border-color:var(--byd)}
+.req-msg{font-size:11.5px;margin-top:8px;line-height:1.5;color:var(--subtle);text-align:center;min-height:1em}
+.req-msg a{color:#FF6A6A}
 .why{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
 .why-c{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:18px;padding:22px 24px}
 .fl{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin-top:36px}
@@ -500,19 +487,10 @@ details#catalog[open] summary i{transform:rotate(180deg)}
           <div class="sum-save"><span id="cSaveL">Ahorro</span><b id="cSave">$0</b></div>
           <p class="sum-note" id="cNote">Desde $18,27M en acciones se activa el beneficio Bronce; desde $32,33M, Plata; y desde $39,06M, Oro.</p>
         </div>
-        <form class="req" id="reqForm" novalidate>
-          <div class="req-h"><b>¿Les gusta esta alianza?</b><span>Envíen la solicitud y el equipo de Kika los contactará para confirmarla.</span></div>
-          <div class="req-g">
-            <label><span>Nombre *</span><input name="nombre" required autocomplete="name"></label>
-            <label><span>Empresa</span><input name="empresa" value="BYD Colombia" autocomplete="organization"></label>
-            <label><span>Correo *</span><input name="correo" type="email" required autocomplete="email"></label>
-            <label><span>Teléfono</span><input name="telefono" type="tel" autocomplete="tel"></label>
-            <label class="full"><span>Comentarios</span><textarea name="comentarios" rows="2"></textarea></label>
-          </div>
-          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <button type="submit" class="req-btn" id="reqBtn">Enviar solicitud</button>
+        <div class="req">
+          <button type="button" class="req-btn" id="reqBtn">Enviar solicitud ✉</button>
           <p class="req-msg" id="reqMsg" role="status" aria-live="polite"></p>
-        </form>
+        </div>
       </div>
     </div>
     <p class="note rv">Tarifas tomadas del <a href="https://kikanieto.com/mediakit2026" target="_blank" rel="noopener">Media Kit 2026 de Kika Nieto ↗</a>. Valores en COP antes de IVA. La propuesta final se confirma con el equipo comercial.</p>
@@ -691,56 +669,23 @@ details#catalog[open] summary i{transform:rotate(180deg)}
   }
   bindSeg('segCalc',function(m){calcM=m;calc();});
 
-  /* ── ENVIAR SOLICITUD ── */
+  /* ── ENVIAR SOLICITUD (abre el correo) ── */
   var MAIL='kikacolaboraciones@gmail.com';
-  var form=document.getElementById('reqForm'), msg=document.getElementById('reqMsg'), btn=document.getElementById('reqBtn');
-  function summary(){
-    var full=order.reduce(function(s,id){return s+BY[id].p*cart[id]},0);
+  var msg=document.getElementById('reqMsg');
+  document.getElementById('reqBtn').addEventListener('click',function(){
+    if(!order.length){msg.textContent='Agreguen al menos una acción a la alianza.';return;}
     var lines=order.map(function(id){return '• '+cart[id]+' × '+BY[id].n+' ('+BY[id].g+') — '+cop(BY[id].p*cart[id])});
-    return {
-      acciones:lines.join('\n'),
-      modalidad:calcM===1?'Alianza única':'Plan de embajadora de '+calcM+' meses',
-      tarifa_plena:document.getElementById('cFull').textContent,
-      beneficio:document.getElementById('cTier').textContent,
-      inversion:document.getElementById('cInvL').textContent+': '+document.getElementById('cInv').textContent,
-      ahorro:document.getElementById('cSaveL').textContent+': '+document.getElementById('cSave').textContent,
-      full:full
-    };
-  }
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    msg.className='req-msg';
-    var f=form.elements, ok=true;
-    ['nombre','correo'].forEach(function(n){var el=f[n];var v=el.value.trim();var bad=!v||(n==='correo'&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v));el.classList.toggle('bad',bad);if(bad)ok=false;});
-    if(!order.length){msg.className='req-msg err';msg.textContent='Agreguen al menos una acción a la alianza antes de enviar.';return;}
-    if(!ok){msg.className='req-msg err';msg.textContent='Revisen el nombre y el correo.';return;}
-    if(f._honey.value)return;
-    var s=summary();
-    var data={
-      _subject:'Solicitud de alianza BYD × Kika Nieto — '+f.nombre.value.trim(),
-      _template:'table', _captcha:'false', _replyto:f.correo.value.trim(),
-      Nombre:f.nombre.value.trim(), Empresa:f.empresa.value.trim(), Correo:f.correo.value.trim(), 'Teléfono':f.telefono.value.trim(),
-      Comentarios:f.comentarios.value.trim(), Modalidad:s.modalidad, Acciones:s.acciones,
-      'Valor a tarifa plena':s.tarifa_plena, 'Beneficio aplicado':s.beneficio, 'Inversión':s.inversion, 'Ahorro':s.ahorro,
-      Origen:location.href
-    };
-    if(location.protocol==='file:'){msg.className='req-msg err';msg.textContent='El envío solo funciona desde la página publicada (kikanieto.com/byd), no desde el archivo abierto en el computador.';return;}
-    btn.disabled=true; btn.textContent='Enviando…';
-    fetch('https://formsubmit.co/ajax/'+MAIL,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
-      .then(function(r){return r.json().catch(function(){return {}}).then(function(j){if(!r.ok||String(j.success)==='false')throw new Error(j.message||('HTTP '+r.status));return j;});})
-      .then(function(){
-        msg.className='req-msg ok';msg.textContent='¡Solicitud enviada! El equipo de Kika los contactará muy pronto.';
-        btn.textContent='Solicitud enviada';
-      })
-      .catch(function(err){
-        try{console.warn('FormSubmit:',err&&err.message);}catch(x){}
-        var body=Object.keys(data).filter(function(k){return k.charAt(0)!=='_'}).map(function(k){return k+': '+data[k]}).join('\n');
-        var href='mailto:'+MAIL+'?subject='+encodeURIComponent(data._subject)+'&body='+encodeURIComponent(body);
-        msg.className='req-msg err';
-        var why=err&&err.message&&/activ/i.test(err.message)?' (el formulario está pendiente de activación)':'';
-        msg.innerHTML='No pudimos enviarla automáticamente'+why+'. <a href="'+href+'">Envíenla por correo aquí</a> o escriban a '+MAIL+'.';
-        btn.disabled=false; btn.textContent='Enviar solicitud';
-      });
+    var body=['Hola equipo de Kika Nieto,','','Queremos avanzar con esta alianza BYD × Kika Nieto:','',
+      lines.join('\n'),'',
+      'Modalidad: '+(calcM===1?'Alianza única':'Plan de embajadora de '+calcM+' meses'),
+      'Valor a tarifa plena: '+document.getElementById('cFull').textContent,
+      'Beneficio aplicado: '+document.getElementById('cTier').textContent,
+      document.getElementById('cInvL').textContent+': '+document.getElementById('cInv').textContent,
+      document.getElementById('cSaveL').textContent+': '+document.getElementById('cSave').textContent,'',
+      'Nombre:','Cargo:','Teléfono:','','Valores en COP antes de IVA. Propuesta: '+location.href.split('#')[0]].join('\n');
+    var href='mailto:'+MAIL+'?subject='+encodeURIComponent('Solicitud de alianza BYD × Kika Nieto')+'&body='+encodeURIComponent(body);
+    window.location.href=href;
+    msg.innerHTML='Se abrió su correo con la solicitud lista. Si no se abrió, escriban a <a href="mailto:'+MAIL+'">'+MAIL+'</a>.';
   });
   calc();
 
