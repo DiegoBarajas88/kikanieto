@@ -122,17 +122,28 @@ table.t tr.total td.hl{color:var(--neon)}
 .ps-l{font-size:9px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--muted)}
 
 /* ── DESTACADOS ── */
-.feature{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start;margin-top:56px}
-.feature + .feature{margin-top:80px;padding-top:80px;border-top:1px solid var(--border)}
-.feature-shots{display:flex;flex-direction:column;gap:14px}
-.feature-shots img{width:100%;border-radius:16px;border:1px solid var(--border);cursor:zoom-in}
-.feature h3{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,4.4vw,60px);line-height:.92;color:#fff;margin:6px 0 14px}
-.mgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px}
-.m{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 22px}
-.m-n{font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:1;color:#fff}
-.m-n.y{color:var(--neon)}
-.m-l{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5}
-.insight{margin-top:24px;border-left:3px solid var(--ashley);padding-left:20px;font-size:16px;color:#fff;font-weight:400;line-height:1.65}
+.hl-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px;margin-top:48px;align-items:stretch}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:28px 30px;display:flex;flex-direction:column}
+.bars{flex:1;display:flex;flex-direction:column;justify-content:space-between}
+.chart-title{font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.brow{display:grid;grid-template-columns:170px minmax(0,1fr);gap:16px;align-items:center;padding:8px 0;border-radius:8px;cursor:default}
+.blabel{display:flex;flex-direction:column;line-height:1.25}
+.btag{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.bname{font-size:13px;color:var(--text)}
+.bline{display:flex;align-items:center;gap:10px;min-width:0}
+.bfill{height:24px;min-width:4px;background:rgba(232,115,10,.55);border-radius:0 4px 4px 0;transition:filter .15s}
+.bval{font-size:13px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums;white-space:nowrap}
+.brow.star .bfill{background:var(--ashley)}
+.brow.star .btag{color:var(--ashley)}
+.brow.star .bname,.brow.star .bval{color:#fff;font-weight:600}
+.brow:hover .bfill{filter:brightness(1.25)}
+.hl-tiles{display:grid;grid-template-rows:repeat(3,1fr);gap:14px}
+.hl-tile{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--ashley);border-radius:18px;padding:20px 24px;display:flex;flex-direction:column;justify-content:center}
+.hl-tile.star{background:rgba(232,115,10,.10);border-color:rgba(232,115,10,.45);border-left-color:var(--ashley)}
+.hl-n{font-family:'Bebas Neue',sans-serif;font-size:54px;line-height:1;color:#fff}
+.hl-tile.star .hl-n{color:var(--neon)}
+.hl-t{font-size:15px;font-weight:600;color:#fff;margin-top:2px}
+.hl-s{font-size:12px;color:var(--muted);margin-top:2px}
 
 /* ── AUDIENCIA ── */
 .aud{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:56px}
@@ -152,27 +163,6 @@ table.t tr.total td.hl{color:var(--neon)}
 /* ── COMENTARIOS ── */
 .comments{columns:2;column-gap:16px;margin-top:56px}
 .comments img{display:block;width:100%;border-radius:14px;border:1px solid var(--border);margin-bottom:16px;break-inside:avoid}
-
-/* ── VALOR ── */
-#valor{background:var(--ashley);color:#1A0E04;padding:120px 0}
-#valor .sec-label{color:#1A0E04}
-#valor .sec-title{color:#1A0E04;font-size:clamp(52px,7vw,104px)}
-.val-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}
-.val{border-radius:20px;padding:30px 32px}
-.val.a{background:rgba(255,255,255,.22)}
-.val.b{background:#1A0E04;color:#F3EFE8}
-.val-l{font-size:13px;font-weight:600}
-.val.b .val-l{color:var(--ashley-soft)}
-.val-n{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,4.5vw,60px);line-height:1;margin-top:6px}
-.val-note{font-size:13px;margin-top:22px;line-height:1.6;color:#2E1A08}
-
-/* ── PROPUESTAS ── */
-.props{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:56px}
-.prop{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--ashley);border-radius:18px;padding:28px 30px}
-.prop-n{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--ashley);letter-spacing:1px}
-.prop h4{font-size:17px;font-weight:600;color:#fff;margin:2px 0 8px}
-.prop p{font-size:14px;color:var(--muted);line-height:1.7}
-.prop .tag{display:inline-block;margin-top:12px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--subtle)}
 
 /* ── CIERRE ── */
 #cierre{padding:130px 0;text-align:center}
@@ -196,13 +186,11 @@ table.t tr.total td.hl{color:var(--neon)}
 /* ── RESPONSIVE ── */
 @media (max-width:1024px){
   .topnav,.wrap,.footer{padding-left:32px;padding-right:32px}
-  .sec,#valor,#cierre{padding-top:96px;padding-bottom:96px}
+  .sec,#cierre{padding-top:96px;padding-bottom:96px}
   .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
   .pieces{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .feature{grid-template-columns:1fr;gap:32px}
-  .feature-shots{flex-direction:row;max-width:520px}
-  .feature-shots img{width:calc(50% - 7px)}
-  .aud,.props,.val-grid{grid-template-columns:1fr}
+  .aud,.hl-grid{grid-template-columns:1fr}
+  .hl-tiles{grid-template-rows:none;grid-template-columns:repeat(3,minmax(0,1fr))}
   .footer{flex-direction:column;align-items:flex-start}
 }
 @media (max-width:640px){
@@ -217,10 +205,15 @@ table.t tr.total td.hl{color:var(--neon)}
   .kpi{padding:18px 16px}
   .kpi-n{font-size:42px}
   .pieces{grid-template-columns:1fr}
-  .mgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .m-n{font-size:32px}
   .comments{columns:1}
-  .aud-card,.prop{padding:22px}
+  .hl-tiles{grid-template-columns:1fr}
+  .chart-card{padding:20px 16px}
+  .brow{grid-template-columns:118px minmax(0,1fr);gap:10px}
+  .btag{letter-spacing:.3px;font-size:8.5px}
+  .bname{font-size:12px}
+  .bfill{height:18px}
+  .hl-n{font-size:44px}
+  .aud-card{padding:22px}
   .tbl-wrap{margin-left:-16px;margin-right:-16px;padding:0 16px}
   table.t{font-size:13px}
   table.t th,table.t td{padding:12px 12px}
@@ -277,7 +270,7 @@ table.t tr.total td.hl{color:var(--neon)}
         <h1 class="hero-title">RESULTADOS<br>DE LA ALIANZA</h1>
         <span class="hero-script">Ashley × Kika Nieto</span>
         <p class="hero-tagline">Ashley estuvo presente en el momento más personal de Kika: <em>la llegada de los muebles a su primer hogar</em>, contado en historias, reel y TikTok.</p>
-        <div class="plan-chip"><span class="dot"></span>Plan Silver · Etapa 1 completa + TikTok en tienda</div>
+        <div class="plan-chip"><span class="dot"></span>Plan Silver · todo entregado + TikTok extra</div>
         <div class="kpis">
           <div class="kpi"><div class="kpi-n">7</div><div class="kpi-l">Piezas publicadas</div><div class="kpi-s">4 historias · 1 reel · 2 TikTok</div></div>
           <div class="kpi"><div class="kpi-n">1.42M</div><div class="kpi-l">Reproducciones</div><div class="kpi-s">1.422.102 en total</div></div>
@@ -293,17 +286,17 @@ table.t tr.total td.hl{color:var(--neon)}
     <div class="wrap">
       <span class="sec-label">Plan Silver · lo contratado</span>
       <h2 class="sec-title">CONTRATADO<br>VS. ENTREGADO</h2>
-      <p class="sec-sub">La Etapa 1 está completa: <strong>6 piezas publicadas frente a 3 contratadas</strong>, más un TikTok adicional grabado en la tienda Ashley.</p>
+      <p class="sec-sub"><strong>Todo lo contratado está entregado</strong>, más un TikTok adicional grabado en la tienda Ashley. Las acciones de apertura y evento se cambiaron por historias.</p>
       <div class="tbl-wrap">
         <table class="t">
           <thead><tr><th>Etapa / acción</th><th>Contratado</th><th>Entregado</th><th>Estado</th></tr></thead>
           <tbody>
-            <tr><td class="feat">1 · Historias Ashley</td><td>1 historia</td><td>4 historias (16 y 25 de mayo)</td><td><span class="st extra">Entregado · +3 extra</span></td></tr>
+            <tr><td class="feat">1 · Historias Ashley</td><td>1 historia</td><td>4 historias (16 y 25 de mayo)</td><td><span class="st ok">Entregado</span></td></tr>
             <tr><td class="feat">1 · Reel en colaboración</td><td>1 reel</td><td>Reel · 18 de septiembre</td><td><span class="st ok">Entregado</span></td></tr>
             <tr><td class="feat">1 · TikTok</td><td>1 TikTok</td><td>TikTok · 30 de septiembre</td><td><span class="st ok">Entregado</span></td></tr>
             <tr><td class="feat">TikTok en tienda Ashley</td><td>—</td><td>TikTok · 6 de octubre</td><td><span class="st extra">Entregado · extra</span></td></tr>
-            <tr><td class="feat">2 · Apertura tienda nueva</td><td>2 historias (pre-evento y evento) → historia</td><td><span class="pending">por confirmar</span></td><td><span class="st prog">Cambiado por historia</span></td></tr>
-            <tr><td class="feat">3 · Evento de inauguración</td><td>Asistencia (2 h) → 1 historia</td><td><span class="pending">por confirmar</span></td><td><span class="st prog">Cambiado por historia</span></td></tr>
+            <tr><td class="feat">2 · Apertura tienda nueva</td><td>2 historias (pre-evento y evento)</td><td>Cambiado por historia</td><td><span class="st ok">Entregado</span></td></tr>
+            <tr><td class="feat">3 · Evento de inauguración</td><td>Asistencia (2 h)</td><td>Cambiado por historia</td><td><span class="st ok">Entregado</span></td></tr>
             <tr><td class="feat">4 · Imagen + pauta digital</td><td>6 meses</td><td>Corriendo</td><td><span class="st ok">En vigencia</span></td></tr>
           </tbody>
         </table>
@@ -363,82 +356,45 @@ table.t tr.total td.hl{color:var(--neon)}
     <div class="wrap">
       <span class="sec-label">Pieza por pieza</span>
       <h2 class="sec-title">LO MÁS DESTACADO</h2>
-
-      <div class="feature">
-        <div class="feature-shots">
-          <img src="/ashley-muebles-resultados/img/historia-25may-1.jpg" alt="Estadísticas de la historia Casa vacía">
-        </div>
-        <div>
-          <span class="sec-label">Instagram · 4 historias · mayo</span>
-          <h3>577.090 REPRODUCCIONES<br>EN HISTORIAS</h3>
-          <p class="sec-sub">El "antes y después" del hogar contado en tiempo real: la casa vacía, la llegada de las piezas y el comedor.</p>
-          <div class="mgrid">
-            <div class="m"><div class="m-n">144K</div><div class="m-l">reproducciones promedio por historia</div></div>
-            <div class="m"><div class="m-n">6.653</div><div class="m-l">interacciones · 158 respuestas por DM</div></div>
-            <div class="m"><div class="m-n">1.477</div><div class="m-l">acciones de actividad en el perfil</div></div>
+      <p class="sec-sub">El TikTok grabado en la tienda Ashley <strong>se vio casi tanto como las otras seis piezas juntas.</strong></p>
+      <div class="hl-grid">
+        <div class="chart-card">
+          <div class="chart-title">Reproducciones por pieza</div>
+          <div class="bars">
+            <div class="brow star" title="TikTok · 6 oct · En la tienda Ashley: 665.000 reproducciones">
+              <div class="blabel"><span class="btag">TikTok · 6 oct</span><span class="bname">En la tienda Ashley</span></div>
+              <div class="bline"><div class="bfill" style="width:100.0%"></div><span class="bval">665.000</span></div>
+            </div>
+            <div class="brow" title="Historia · 25 may · "Casa vacía": 162.897 reproducciones">
+              <div class="blabel"><span class="btag">Historia · 25 may</span><span class="bname">"Casa vacía"</span></div>
+              <div class="bline"><div class="bfill" style="width:24.5%"></div><span class="bval">162.897</span></div>
+            </div>
+            <div class="brow" title="Historia · 25 may · Silla reclinable: 140.990 reproducciones">
+              <div class="blabel"><span class="btag">Historia · 25 may</span><span class="bname">Silla reclinable</span></div>
+              <div class="bline"><div class="bfill" style="width:21.2%"></div><span class="bval">140.990</span></div>
+            </div>
+            <div class="brow" title="Historia · 16 may · "¡Habemus muebles!": 138.714 reproducciones">
+              <div class="blabel"><span class="btag">Historia · 16 may</span><span class="bname">"¡Habemus muebles!"</span></div>
+              <div class="bline"><div class="bfill" style="width:20.9%"></div><span class="bval">138.714</span></div>
+            </div>
+            <div class="brow" title="Historia · 25 may · "Llegó el comedor": 134.489 reproducciones">
+              <div class="blabel"><span class="btag">Historia · 25 may</span><span class="bname">"Llegó el comedor"</span></div>
+              <div class="bline"><div class="bfill" style="width:20.2%"></div><span class="bval">134.489</span></div>
+            </div>
+            <div class="brow" title="Reel · 18 sep · Reel en colaboración: 120.812 reproducciones">
+              <div class="blabel"><span class="btag">Reel · 18 sep</span><span class="bname">Reel en colaboración</span></div>
+              <div class="bline"><div class="bfill" style="width:18.2%"></div><span class="bval">120.812</span></div>
+            </div>
+            <div class="brow" title="TikTok · 30 sep · TikTok @kikanieto: 59.200 reproducciones">
+              <div class="blabel"><span class="btag">TikTok · 30 sep</span><span class="bname">TikTok @kikanieto</span></div>
+              <div class="bline"><div class="bfill" style="width:8.9%"></div><span class="bval">59.200</span></div>
+            </div>
           </div>
-          <p class="insight">"Casa vacía" fue la historia más fuerte: 162.897 reproducciones y 3.072 interacciones.</p>
         </div>
-      </div>
-
-      <div class="feature">
-        <div class="feature-shots">
-          <img src="/ashley-muebles-resultados/img/reel-18sep.jpg" alt="Estadísticas del reel: reproducciones y espectadores">
-          <img src="/ashley-muebles-resultados/img/reel-18sep-audiencia.jpg" alt="Audiencia del reel: seguidores y edades">
-        </div>
-        <div>
-          <span class="sec-label">Instagram · reel en colaboración · 18 sep</span>
-          <h3>67.725 CUENTAS<br>ALCANZADAS</h3>
-          <div class="mgrid">
-            <div class="m"><div class="m-n">120.812</div><div class="m-l">reproducciones</div></div>
-            <div class="m"><div class="m-n y">44,8%</div><div class="m-l">no seguían a Kika</div></div>
-            <div class="m"><div class="m-n">8d 15h</div><div class="m-l">tiempo visto en total</div></div>
-            <div class="m"><div class="m-n">1,9 mil</div><div class="m-l">me gusta</div></div>
-            <div class="m"><div class="m-n">125</div><div class="m-l">compartidos (95 envíos + 30 reposts)</div></div>
-            <div class="m"><div class="m-n">96</div><div class="m-l">guardados · 20 comentarios</div></div>
-          </div>
-          <p class="insight">Casi la mitad de quienes vieron el reel no seguían a Kika: el contenido llevó a Ashley más allá de su comunidad.</p>
-        </div>
-      </div>
-
-      <div class="feature">
-        <div class="feature-shots">
-          <img src="/ashley-muebles-resultados/img/tiktok-30sep.jpg" alt="Estadísticas del TikTok">
-          <img src="/ashley-muebles-resultados/img/tiktok-30sep-audiencia.jpg" alt="Audiencia del TikTok: género, edad y ubicación">
-        </div>
-        <div>
-          <span class="sec-label">TikTok · 30 sep</span>
-          <h3>8,3% DE<br>INTERACCIÓN</h3>
-          <div class="mgrid">
-            <div class="m"><div class="m-n">59,2 mil</div><div class="m-l">visualizaciones</div></div>
-            <div class="m"><div class="m-n y">4.825</div><div class="m-l">me gusta</div></div>
-            <div class="m"><div class="m-n">214 h</div><div class="m-l">tiempo visto en total</div></div>
-            <div class="m"><div class="m-n">12,6 s</div><div class="m-l">promedio visto (video de 24 s)</div></div>
-            <div class="m"><div class="m-n">24,6%</div><div class="m-l">lo vio completo</div></div>
-            <div class="m"><div class="m-n">98</div><div class="m-l">guardados · 67 compartidos · 27 comentarios</div></div>
-          </div>
-          <p class="insight">Por cada 100 visualizaciones hubo más de 8 interacciones entre me gusta, comentarios y compartidos.</p>
-        </div>
-      </div>
-
-      <div class="feature">
-        <div class="feature-shots">
-          <img src="/ashley-muebles-resultados/img/tiktok-6oct.jpg" alt="Estadísticas del TikTok del 6 de octubre: espectadores y tipo de espectador">
-          <img src="/ashley-muebles-resultados/img/tiktok-6oct-resumen.jpg" alt="Métricas clave del TikTok del 6 de octubre al 13 de octubre">
-        </div>
-        <div>
-          <span class="sec-label">TikTok · en la tienda Ashley · 6 oct</span>
-          <h3>631 MIL PERSONAS<br>LO VIERON</h3>
-          <div class="mgrid">
-            <div class="m"><div class="m-n">665 mil</div><div class="m-l">visualizaciones</div></div>
-            <div class="m"><div class="m-n y">77%</div><div class="m-l">no seguían a Kika</div></div>
-            <div class="m"><div class="m-n">73 mil</div><div class="m-l">me gusta</div></div>
-            <div class="m"><div class="m-n">11,1%</div><div class="m-l">de interacción</div></div>
-            <div class="m"><div class="m-n">883</div><div class="m-l">compartidos · 80 comentarios</div></div>
-            <div class="m"><div class="m-n">932</div><div class="m-l">guardados</div></div>
-          </div>
-          <p class="insight">La pieza más vista de la campaña: el 71,9% lo vio completo y en promedio se vio 10,3 s, más que su duración de 6,3 s.</p>
-          <p class="note">Corte 19 oct 2026 · vio completo y tiempo promedio: corte 13 oct.</p>
+        <div class="hl-tiles">
+          <div class="hl-tile star"><div class="hl-n">77%</div><div class="hl-t">no seguía a Kika</div><div class="hl-s">TikTok en la tienda · 631 mil personas lo vieron</div></div>
+          <div class="hl-tile"><div class="hl-n">72%</div><div class="hl-t">lo vio completo</div><div class="hl-s">TikTok en la tienda · y muchos lo repitieron</div></div>
+          <div class="hl-tile"><div class="hl-n">44,8%</div><div class="hl-t">del reel llegó a no seguidores</div><div class="hl-s">Reel en colaboración · 67.725 cuentas</div></div>
         </div>
       </div>
     </div>
@@ -533,33 +489,6 @@ table.t tr.total td.hl{color:var(--neon)}
     </div>
   </section>
 
-  <!-- ══ VALOR ══ -->
-  <section id="valor">
-    <div class="wrap">
-      <span class="sec-label">Valor entregado</span>
-      <h2 class="sec-title">+$19,6M EN<br>CONTENIDO EXTRA</h2>
-      <div class="val-grid">
-        <div class="val a"><div class="val-l">Etapa 1 contratada</div><div class="val-n">3 piezas · $24,5M</div></div>
-        <div class="val b"><div class="val-l">Etapa 1 entregada</div><div class="val-n">6 piezas · $44,1M</div></div>
-      </div>
-      <p class="val-note">Valorado con las tarifas de la propuesta: historia $6,53M · reel $10,45M · TikTok $7,54M (COP, sin IVA). Las 3 historias adicionales no tuvieron costo para Ashley.</p>
-    </div>
-  </section>
-
-  <!-- ══ PROPUESTAS ══ -->
-  <section class="sec" id="propuestas">
-    <div class="wrap">
-      <span class="sec-label">Lo que sigue</span>
-      <h2 class="sec-title">4 FORMAS DE<br>SACARLE MÁS</h2>
-      <div class="props">
-        <div class="prop"><div class="prop-n">01</div><h4>Activar la pauta incluida</h4><p>El plan incluye 6 meses de imagen + pauta. El TikTok en la tienda ya llegó a 631 mil personas (77% no seguidores): pautarlo hacia mujeres de 18 a 34 años en Colombia.</p><span class="tag">Incluido en Silver</span></div>
-        <div class="prop"><div class="prop-n">02</div><h4>Lo que falta, con medición</h4><p>En lo que falta (historias de tienda y de evento), usar enlace con UTM y un código de descuento para medir visitas y ventas.</p><span class="tag">Incluido en Silver</span></div>
-        <div class="prop"><div class="prop-n">03</div><h4>Cerrar el círculo con datos de Ashley</h4><p>Cruzar estas fechas con el tráfico web, los seguidores de @ashleycolombia.oficial y las consultas en tienda.</p><span class="tag">Datos de Ashley</span></div>
-        <div class="prop"><div class="prop-n">04</div><h4>El home tour en YouTube</h4><p>El hogar ya está listo. Un video dedicado en el canal principal (7,1M) dejaría a Ashley en contenido que se sigue viendo por años.</p><span class="tag">Adicional · $12M COP</span></div>
-      </div>
-    </div>
-  </section>
-
   <!-- ══ CIERRE ══ -->
   <section id="cierre">
     <div class="cierre-bg"></div>
@@ -568,7 +497,7 @@ table.t tr.total td.hl{color:var(--neon)}
       <span class="cierre-script">y una comunidad que lo vio nacer</span>
       <div class="cierre-btns">
         <a class="btn ghost" href="/ashley-muebles/">← Ver la propuesta inicial</a>
-        <a class="btn solid" href="mailto:kikacolaboraciones@gmail.com">Hablemos de lo que sigue →</a>
+        <a class="btn solid" href="mailto:kikacolaboraciones@gmail.com">Escríbenos →</a>
       </div>
       <p class="cierre-mail"><a href="mailto:kikacolaboraciones@gmail.com">kikacolaboraciones@gmail.com</a> · @_kikanieto · @kikanieto</p>
     </div>
@@ -616,7 +545,7 @@ table.t tr.total td.hl{color:var(--neon)}
 
   // Lightbox para las capturas
   var lb = document.getElementById('lb');
-  document.querySelectorAll('.piece-img img, .feature-shots img, .comments img').forEach(function(img){
+  document.querySelectorAll('.piece-img img, .comments img').forEach(function(img){
     img.addEventListener('click', function(){
       lb.querySelector('img').src = img.src;
       lb.querySelector('img').alt = img.alt;
