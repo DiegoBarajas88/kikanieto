@@ -339,6 +339,59 @@ details#catalog[open] summary i{transform:rotate(180deg)}
 .fl-i span{font-size:12.5px;color:var(--muted);line-height:1.55}
 .fl-i a{color:#FF6A6A;text-decoration:none}
 @media (max-width:640px){.why,.fl{grid-template-columns:1fr}}
+/* ── PLAN 12 MESES ── */
+.plan-bar{margin-top:48px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.plan-desc{font-size:13px;color:var(--muted);max-width:520px;line-height:1.6}
+.plan-kpis{margin-top:26px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.kpi{border-radius:18px;border:1px solid var(--border);background:rgba(255,255,255,.035);padding:20px 22px}
+.kpi-l{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.kpi-v{font-family:'Bebas Neue',sans-serif;font-size:38px;line-height:1;color:#fff;font-variant-numeric:tabular-nums;transition:opacity .2s}
+.kpi-s{font-size:11px;color:var(--muted);margin-top:6px}
+.kpi-s s{color:rgba(255,255,255,.4)}
+.kpi.save-k{border-color:rgba(232,255,0,.28);background:rgba(232,255,0,.06)}
+.kpi.save-k .kpi-l{color:rgba(232,255,0,.8)}
+.kpi.save-k .kpi-v{color:var(--neon)}
+.tl-wrap{margin-top:22px;border-radius:22px;border:1px solid var(--border);background:rgba(0,0,0,.2);overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tl{min-width:920px;display:grid;grid-template-columns:230px repeat(12,1fr) 64px;align-items:stretch}
+.tl-ph{padding:14px 10px 12px;border-bottom:1px solid var(--border);font-size:9px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#fff;line-height:1.4}
+.tl-ph small{display:block;font-size:10.5px;letter-spacing:.2px;text-transform:none;font-weight:400;color:var(--muted);margin-top:3px}
+.tl-ph.q1{grid-column:2/5;border-left:2px solid var(--sky)}.tl-ph.q2{grid-column:5/8;border-left:2px solid var(--byd)}.tl-ph.q3{grid-column:8/11;border-left:2px solid #FFB23E}.tl-ph.q4{grid-column:11/14;border-left:2px solid var(--neon)}
+.tl-h{padding:10px 0;text-align:center;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)}
+.tl-h.lab{text-align:left;padding-left:20px}
+.tl-r{padding:12px 12px 12px 20px;border-bottom:1px solid rgba(255,255,255,.05);font-size:13px;font-weight:600;color:#fff;line-height:1.3}
+.tl-r small{display:block;font-size:10.5px;font-weight:400;color:var(--muted);margin-top:2px}
+.tl-c{display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(255,255,255,.05);border-left:1px solid rgba(255,255,255,.03)}
+.tl-t{display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff}
+.tl-row-off .tl-r{color:rgba(255,255,255,.3)}
+.tl-row-off .tl-r small{color:rgba(255,255,255,.22)}
+.tl-row-off .tl-t{color:rgba(255,255,255,.2)}
+.dot{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:var(--byd);box-shadow:0 0 10px rgba(229,0,18,.45);font-style:normal;font-size:9px;font-weight:700;color:#fff;transition:transform .25s}
+.dot.n{width:20px;height:20px;background:var(--byd)}
+.dot.b{background:var(--neon);box-shadow:0 0 10px rgba(232,255,0,.35)}
+.dot.o{background:transparent;border:1px dashed rgba(255,255,255,.22);box-shadow:none}
+.tl-tag{display:inline-block;margin-top:4px;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:2px 7px}
+.tl-legend{margin-top:12px;display:flex;flex-wrap:wrap;gap:18px;font-size:11px;color:var(--muted)}
+.tl-legend span{display:inline-flex;align-items:center;gap:7px}
+.tl-legend .dot{width:12px;height:12px}.tl-legend .dot.n{width:16px;height:16px;font-size:8px}
+.custom{margin-top:48px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:24px 28px;border-radius:20px;border:1px solid var(--border);background:rgba(255,255,255,.03)}
+.custom-t{font-family:'Bebas Neue',sans-serif;font-size:28px;color:#fff;line-height:1}
+.custom-b{font-size:12.5px;color:var(--muted);margin-top:4px}
+.custom-btn{font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;text-decoration:none;padding:14px 22px;border-radius:999px;border:1px solid rgba(229,0,18,.6);transition:background .2s,border-color .2s;text-align:center}
+.custom-btn:hover{background:var(--byd);border-color:var(--byd)}
+@media (max-width:1024px){.plan-kpis{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.plan-kpis{grid-template-columns:1fr 1fr;gap:10px}.kpi{padding:16px}.kpi-v{font-size:28px}.custom{padding:20px 18px}.custom-btn{width:100%}.tl{grid-template-columns:170px repeat(12,46px) 52px;min-width:0}.tl-r{padding-left:14px}}
+
+/* colores por formato */
+.g-hi{--c:#E50012}.g-tt{--c:#2BD4F0}.g-ca{--c:#A97CFF}.g-yt{--c:#FF9A1F}.g-ug{--c:#3DDC97}
+.dot[class*="g-"]{background:var(--c);box-shadow:0 0 10px color-mix(in srgb,var(--c) 45%,transparent);color:#07090F}
+.dot.g-ug{width:20px;height:20px;font-size:10px}
+.tl-r{display:flex;gap:10px;align-items:flex-start}
+.chip{width:4px;align-self:stretch;border-radius:4px;background:var(--c);flex-shrink:0}
+.tl-row-off .chip{opacity:.25}
+.tl-foot{margin-top:14px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.tl-foot .tl-legend{margin-top:0}
+.budget-link{font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;text-decoration:none;padding:11px 18px;border-radius:999px;border:1px solid rgba(232,255,0,.45);transition:background .2s,color .2s}
+.budget-link:hover{background:var(--neon);color:#07090F}
 /* ── RESPONSIVE ── */
 @media (max-width:1024px){
   .topnav,.wrap,.footer{padding-left:32px;padding-right:32px}
@@ -385,8 +438,8 @@ details#catalog[open] summary i{transform:rotate(180deg)}
   </div>
   <div class="topnav-links">
     <a href="#formatos">Formatos</a>
-    <a href="#paquetes">Paquetes</a>
-    <a href="#alianza">Arma tu alianza</a>
+    <a href="#plan">Plan 12 meses</a>
+    <a href="/byd/personaliza/" target="_blank" rel="noopener">Personaliza ↗</a>
   </div>
   <span class="conf-badge">Propuesta 2026</span>
 </nav>
@@ -397,14 +450,14 @@ details#catalog[open] summary i{transform:rotate(180deg)}
   <div class="wrap">
     <div class="hero-layout">
       <div>
-        <div class="hero-eyebrow"><span class="rec-dot"></span>Propuesta de alianza · Octubre 2026</div>
+        <div class="hero-eyebrow"><span class="rec-dot"></span>Propuesta de alianza · Noviembre 2026</div>
         <h1 class="hero-title">AL VOLANTE<br>CON KIKA</h1>
         <span class="hero-script">BYD × Kika Nieto</span>
         <p class="hero-tagline">Kika ya maneja un BYD en su día a día y graba buena parte de sus videos dentro de él. <em>Hablar de BYD no interrumpe su contenido, lo acompaña.</em> Proponemos convertir esa realidad en una alianza constante, en cada plataforma.</p>
         <div class="hero-meta">
           <span class="meta-pill"><b>5</b> plataformas</span>
-          <span class="meta-pill"><b>3</b> paquetes</span>
-          <span class="meta-pill">Planes de <b>embajadora</b></span>
+          <span class="meta-pill"><b>7</b> formatos</span>
+          <span class="meta-pill">Embajadora <b>12 meses</b></span>
         </div>
         <p class="dir-to">Preparada para el <b>equipo de mercadeo de BYD Colombia</b></p>
         <div class="hero-stats">
@@ -445,41 +498,50 @@ details#catalog[open] summary i{transform:rotate(180deg)}
       <!-- Nombre · opciones: "Detrás del Post" (elegido) / "Zoom In" / "Lo Que No Se Vio" -->
       <div class="fmt rv"><div class="fmt-n">02</div><div class="fmt-t">Detrás del Post</div><div class="fmt-d">Historias · Anclando contenidos</div><p class="fmt-b">Da visibilidad en historias a un contenido ya publicado en el feed (TikTok, YouTube o Instagram) y continúa la narrativa para profundizar en características específicas. Un storytelling 360 que refuerza la seguridad y la confianza de la comunidad en lo que Kika recomienda.</p></div>
       <!-- Nombre · opciones: "Kilómetros con Kika" (elegido) / "Ruta Kika" / "Copiloto de Kika" -->
-      <div class="fmt rv"><div class="fmt-n">03</div><div class="fmt-t">Kilómetros con Kika</div><div class="fmt-d">Historias · Viaje en carretera</div><p class="fmt-b">Muestra la comodidad, el confort y el espacio que se viven dentro del vehículo en viajes y travesías en familia, con mascotas o con amigos.</p></div>
+      <div class="fmt rv"><div class="fmt-n">03</div><div class="fmt-t">Kilómetros con Kika</div><div class="fmt-d">Reel en collab · Viaje en carretera</div><p class="fmt-b">Un reel en collab con BYD cada tres meses, publicado en el perfil de Kika y en el de la marca, que muestra la comodidad, el confort y el espacio que se viven dentro del vehículo en viajes y travesías en familia, con mascotas o con amigos.</p></div>
       <!-- Nombre · opciones: "Pase VIP" (elegido) / "Modo Evento" / "Kika en Evento" -->
       <div class="fmt t rv"><div class="fmt-n">04</div><div class="fmt-t">Pase VIP</div><div class="fmt-d">TikTok · Vlog BYD</div><p class="fmt-b">Muestra de forma orgánica y cercana la experiencia de Kika en los eventos, activaciones o lanzamientos a los que la marca quiera invitarla.</p></div>
       <!-- Nombre · opciones: "Anatomía del Carro" (elegido) / "El Slide 2" / "Desliza y Maneja" -->
-      <div class="fmt rv"><div class="fmt-n">05</div><div class="fmt-t">Anatomía del Carro</div><div class="fmt-d">Carrusel IG</div><p class="fmt-b">Una vez al mes Kika publica un carrusel en su feed contando una historia, una experiencia o cerrando el mes. De forma orgánica, el segundo slide siempre incluye algo del carro: su interior, su autonomía, su confort, nuevos lanzamientos, etc.</p></div>
+      <div class="fmt rv"><div class="fmt-n">05</div><div class="fmt-t">Anatomía del Carro</div><div class="fmt-d">Carrusel IG</div><p class="fmt-b">Cada dos meses Kika publica un carrusel en su feed contando una historia, una experiencia o cerrando el mes. De forma orgánica, el segundo slide siempre incluye algo del carro: su interior, su autonomía, su confort, nuevos lanzamientos, etc.</p></div>
       <!-- Nombre · opciones: "Diario al Volante" (elegido) / "Al Volante" / "Charlas de Carretera" -->
       <!-- PLACEHOLDER: confirmar que estos 2 videos de referencia son los grabados en su carro; si no, reemplazar los links -->
-      <div class="fmt y rv"><div class="fmt-n">06</div><div class="fmt-t">Diario al Volante</div><div class="fmt-d">Mención YouTube · Canal de vlogs</div><p class="fmt-b">En El Diario de Kika, su canal más fiel, se incluye una acción mensual en la que Kika habla o comparte algo de su vida mientras maneja. Es un formato que ella ya ha usado, así que se percibe como parte natural de su universo. Referentes grabados en su carro: <a href="https://youtu.be/VVOxR8Z2V2c" target="_blank" rel="noopener">video 1 ↗</a> · <a href="https://youtu.be/0KgmDxZKvjc" target="_blank" rel="noopener">video 2 ↗</a></p></div>
+      <div class="fmt y rv"><div class="fmt-n">06</div><div class="fmt-t">Diario al Volante</div><div class="fmt-d">Mención YouTube · Canal de vlogs</div><p class="fmt-b">En El Diario de Kika, su canal más fiel, se incluye, cada dos meses, una acción en la que Kika habla o comparte algo de su vida mientras maneja. Es un formato que ella ya ha usado, así que se percibe como parte natural de su universo. Referentes grabados en su carro: <a href="https://youtu.be/VVOxR8Z2V2c" target="_blank" rel="noopener">video 1 ↗</a> · <a href="https://youtu.be/0KgmDxZKvjc" target="_blank" rel="noopener">video 2 ↗</a></p></div>
       <!-- Nombre · opciones: "Día de Rodaje" (elegido) / "Estudio BYD" / "Jornada BYD" -->
-      <div class="fmt c rv"><div class="fmt-n">07</div><div class="fmt-t">Día de Rodaje</div><div class="fmt-d">Contenido para cuenta BYD · UGC</div><p class="fmt-b">Contenido exclusivo para la cuenta oficial de BYD Colombia en Instagram, con un enfoque más técnico y comercial sobre los vehículos y sus características. Una vez al mes, Kika asiste a una jornada de grabación en la que se producen los videos que la marca necesita para el mes siguiente. Kika y su equipo se encargan de la preproducción, la grabación y la posproducción, y entregan el material al community manager de BYD, que lo publica y le hace seguimiento.</p></div>
+      <div class="fmt c rv"><div class="fmt-n">07</div><div class="fmt-t">Día de Rodaje</div><div class="fmt-d">Contenido para cuenta BYD · UGC</div><p class="fmt-b">Contenido exclusivo para la cuenta oficial de BYD Colombia en Instagram, con un enfoque más técnico y comercial sobre los vehículos y sus características. Kika y su equipo producen los videos que la marca necesita: se encargan de la preproducción, la grabación y la posproducción, y entregan el material al community manager de BYD, que lo publica y le hace seguimiento.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ══ PAQUETES ══ -->
-<section id="paquetes" class="pad alt">
+<!-- ══ PLAN 12 MESES ══ -->
+<section id="plan" class="pad alt">
   <div class="wrap">
-    <span class="sec-label">Paquetes</span>
-    <h2 class="sec-title rv">TRES RUTAS.<br>UN MISMO DESTINO.</h2>
-    <p class="sec-sub rv">Cada paquete reúne una activación de cada formato y se organiza en conjunto con BYD. Entre más completo el paquete, mayor el ahorro frente a contratar cada pieza por separado.</p>
+    <span class="sec-label">Embajadora 12 meses</span>
+    <h2 class="sec-title rv">UN AÑO AL VOLANTE<br>CON KIKA</h2>
+    <p class="sec-sub rv">Proponemos que Kika sea <strong>embajadora de BYD durante 12 meses</strong>. Así la marca deja de ser una campaña y se vuelve parte de su historia: su comunidad la ve mes a mes, en cada plataforma. Elige el plan y mira cómo se distribuyen los formatos a lo largo del año.</p>
 
-    <div class="mode rv">
-      <div>
-        <div class="mode-t">Beneficios por contratación</div>
-        <div class="mode-b">Elige la modalidad y los valores de cada paquete se ajustan automáticamente.</div>
+    <div class="plan-bar rv">
+      <div class="seg" id="segPlan" role="group" aria-label="Plan de embajadora">
+        <button type="button" data-v="br" aria-pressed="false">Bronce</button>
+        <button type="button" data-v="pl" aria-pressed="false">Plata</button>
+        <button type="button" data-v="or" aria-pressed="true">Oro · Recomendado</button>
       </div>
-      <div class="seg" id="segMode" role="group" aria-label="Modalidad de contratación">
-        <button type="button" data-v="1" aria-pressed="true">Paquete único</button>
-        <button type="button" data-v="3" aria-pressed="false">Embajadora 3 meses</button>
-        <button type="button" data-v="6" aria-pressed="false">Embajadora 6 meses</button>
-        <button type="button" data-v="12" aria-pressed="false">Embajadora 12 meses</button>
-      </div>
+      <p class="plan-desc" id="planDesc"></p>
     </div>
 
-    <div class="pk-grid" id="pkGrid"></div>
+    <div class="plan-kpis rv">
+      <div class="kpi"><div class="kpi-l">Inversión mensual promedio</div><div class="kpi-v" id="kMonth"></div><div class="kpi-s" id="kFullM"></div></div>
+      <div class="kpi"><div class="kpi-l">Inversión total · 12 meses</div><div class="kpi-v" id="kYear"></div><div class="kpi-s">COP antes de IVA</div></div>
+      <div class="kpi save-k"><div class="kpi-l">Ahorro del paquete</div><div class="kpi-v" id="kSave"></div><div class="kpi-s">en el año, frente a tarifa plena</div></div>
+      <div class="kpi"><div class="kpi-l">Piezas en el año</div><div class="kpi-v" id="kPieces"></div><div class="kpi-s" id="kPiecesS"></div></div>
+    </div>
+
+    <div class="tl-wrap rv">
+      <div class="tl" id="timeline"></div>
+    </div>
+    <div class="tl-foot rv">
+      <p class="tl-legend"><span><i class="dot g-hi"></i>Historias y reels de Instagram</span><span><i class="dot g-tt"></i>TikTok</span><span><i class="dot g-ca"></i>Carrusel IG</span><span><i class="dot g-yt"></i>YouTube</span><span><i class="dot g-ug">3</i>Día de Rodaje: videos para la cuenta de BYD</span><span><i class="dot o"></i>Disponible en otro plan</span></p>
+      <a class="budget-link" id="budgetLink" href="/byd/presupuesto/?plan=or" target="_blank" rel="noopener">Ver el detalle del presupuesto ↗</a>
+    </div>
 
     <div class="vol rv" id="volumen">
       <div class="vol-h"><div class="vol-t">Día de Rodaje</div><div class="vol-d">Contenido para cuenta BYD · UGC · precio por volumen</div></div>
@@ -489,53 +551,17 @@ details#catalog[open] summary i{transform:rotate(180deg)}
           <tbody id="volBody"></tbody>
         </table>
       </div>
-      <p class="note">El valor por video disminuye según la cantidad de videos contratados al mes. <b>El paquete Oro incluye 3 videos</b>; la cantidad se puede ajustar según esta tabla.</p>
+      <p class="note">El valor por video disminuye según la cantidad de videos contratados al mes. <b>El plan Oro incluye un Día de Rodaje cada tres meses, con 3 videos cada uno</b> (12 videos en el año); la cantidad se puede ajustar según esta tabla.</p>
     </div>
-    <p class="note rv">Valores en pesos colombianos (COP), antes de IVA (impuesto al valor agregado). En los planes de embajadora, el valor indicado corresponde a cada mes del plan. <a href="https://kikanieto.com/mediakit2026" target="_blank" rel="noopener">Ver tarifario 2026 ↗</a></p>
-  </div>
-</section>
 
-<!-- ══ ARMA TU ALIANZA ══ -->
-<section id="alianza" class="pad">
-  <div class="wrap">
-    <span class="sec-label">A la medida</span>
-    <h2 class="sec-title rv">ARMA TU<br>ALIANZA</h2>
-    <p class="sec-sub rv">¿Prefieren otra combinación? Abran el catálogo, arrastren las acciones a su alianza y vean el valor al instante. <strong>Entre más completa la alianza, mayor el ahorro</strong>, con la misma lógica de los paquetes.</p>
-
-    <div class="builder rv">
-      <div class="cat">
-        <details id="catalog">
-          <summary><span>Catálogo de acciones · Tarifario 2026</span><i>▾</i></summary>
-          <div class="cat-list" id="catList"></div>
-        </details>
-        <p class="cat-hint">Arrastra una acción a la casilla o toca <b>+</b> para agregarla.</p>
+    <div class="custom rv">
+      <div>
+        <div class="custom-t">¿Necesitan otra combinación?</div>
+        <div class="custom-b">Elijan las acciones y la cantidad que mejor se ajusten a sus objetivos.</div>
       </div>
-
-      <div class="cart-wrap">
-        <div class="drop" id="drop" aria-label="Tu alianza">
-          <div class="drop-empty" id="dropEmpty"><span>⇣</span>Arrastra aquí las acciones de tu alianza</div>
-          <div id="cartList"></div>
-        </div>
-        <div class="seg seg-sm" id="segCalc" role="group" aria-label="Modalidad">
-          <button type="button" data-v="1" aria-pressed="true">Única</button>
-          <button type="button" data-v="3" aria-pressed="false">3 meses</button>
-          <button type="button" data-v="6" aria-pressed="false">6 meses</button>
-          <button type="button" data-v="12" aria-pressed="false">12 meses</button>
-        </div>
-        <div class="sum">
-          <div class="sum-row"><span>Valor a tarifa plena</span><b id="cFull">$0</b></div>
-          <div class="sum-row"><span>Beneficio aplicado</span><b id="cTier">—</b></div>
-          <div class="sum-row big"><span id="cInvL">Inversión</span><b id="cInv">$0</b></div>
-          <div class="sum-save"><span id="cSaveL">Ahorro</span><b id="cSave">$0</b></div>
-          <p class="sum-note" id="cNote">Desde $18,27M en acciones se activa el beneficio Bronce; desde $32,33M, Plata; y desde $39,83M, Oro.</p>
-        </div>
-        <div class="req">
-          <button type="button" class="req-btn" id="reqBtn">Enviar solicitud ✉</button>
-          <p class="req-msg" id="reqMsg" role="status" aria-live="polite"></p>
-        </div>
-      </div>
+      <a class="custom-btn" href="/byd/personaliza/" target="_blank" rel="noopener">Personaliza tu alianza según tus necesidades ↗</a>
     </div>
-    <p class="note rv">Tarifas tomadas del <a href="https://kikanieto.com/mediakit2026" target="_blank" rel="noopener">Media Kit 2026 de Kika Nieto ↗</a>. Valores en COP antes de IVA. La propuesta final se confirma con el equipo comercial.</p>
+    <p class="note rv">Valores en pesos colombianos (COP), antes de IVA (impuesto al valor agregado). La ruta mes a mes es una propuesta y se ajusta al calendario de eventos y lanzamientos de BYD. <a href="https://kikanieto.com/mediakit2026" target="_blank" rel="noopener">Ver tarifario 2026 ↗</a></p>
   </div>
 </section>
 
@@ -546,10 +572,10 @@ details#catalog[open] summary i{transform:rotate(180deg)}
     <div class="cierre-eyebrow">El próximo paso</div>
     <h2 class="cierre-title">¿ARRANCAMOS<br>EL VIAJE?</h2>
     <span class="cierre-script">El carro ya está encendido.</span>
-    <p class="cierre-sub">Con un sí, definimos el paquete, la duración y el calendario del primer mes, para que <strong>BYD aparezca en el contenido de Kika desde las próximas semanas</strong>.</p>
+    <p class="cierre-sub">Con un sí, definimos el plan y el calendario del primer mes, para que <strong>BYD aparezca en el contenido de Kika desde las próximas semanas</strong>.</p>
     <div class="next">
       <div><b>01</b>Reunión de alineación</div>
-      <div><b>02</b>Elección de paquete</div>
+      <div><b>02</b>Elección del plan</div>
       <div><b>03</b>Calendario del mes 1</div>
       <div><b>04</b>Primera activación</div>
     </div>
@@ -601,152 +627,76 @@ details#catalog[open] summary i{transform:rotate(180deg)}
     var btns=document.querySelectorAll('#'+id+' button');
     btns.forEach(function(b){b.addEventListener('click',function(){
       btns.forEach(function(x){x.setAttribute('aria-pressed','false')});
-      b.setAttribute('aria-pressed','true');cb(+b.getAttribute('data-v'));
+      b.setAttribute('aria-pressed','true');var v=b.getAttribute('data-v');cb(isNaN(+v)?v:+v);
     })});
   }
   function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
 
-  /* ── PAQUETES ── */
+  /* ── PLAN EMBAJADORA 12 MESES ── */
   /* Precio por volumen de "Día de Rodaje". El valor por video siempre se calcula (total / videos). */
   var VOL=[{q:1,t:2500000},{q:4,t:9000000},{q:8,t:16000000},{q:12,t:21000000}];
   document.getElementById('volBody').innerHTML=VOL.map(function(r){
     return '<tr><td class="f">'+r.q+(r.q===1?' video':' videos')+'</td><td class="v">'+cop(r.t)+'</td><td class="v">'+cop(r.t/r.q)+'</td></tr>';
   }).join('');
-  /* El paquete Oro incluye 3 videos de "Día de Rodaje" a la tarifa de 1 video (3 × $2.500.000 = $7.500.000).
-     El cliente puede ajustar la cantidad según la tabla de volumen. Total y ahorro se calculan a partir de los ítems. */
-  var CTA_Q=3;
-  var R={hist:6530000,tt:7540000,car:7530000,cta:CTA_Q*VOL[0].t,yt:4200000};
-  // [nombre creativo, descriptor funcional, tarifa] · mismos nombres que en la sección de formatos
-  var ITEMS=[['Pregúntale a Kika','Historias · Respondiendo preguntas','hist'],['Detrás del Post','Historias · Anclando contenidos','hist'],['Pase VIP','TikTok · Vlog BYD','tt'],['Anatomía del Carro','Carrusel IG','car'],['Diario al Volante','Mención YouTube · Canal de vlogs','yt'],['Día de Rodaje','Contenido para cuenta BYD · UGC · '+CTA_Q+' videos (<a href="#volumen">ajustable ↓</a>)','cta']];
-  var PK=[
-    {k:'br',n:'Bronce',d:.10,inc:[0,2,4],sub:'Presencia constante y orgánica de BYD dentro del contenido habitual de Kika.'},
-    {k:'pl',n:'Plata',d:.15,inc:[0,1,2,3,4],sub:'Amplía la presencia a más plataformas y mantiene una conversación constante alrededor de la marca.'},
-    {k:'or',n:'Oro',d:.20,inc:[0,1,2,3,4,5],sub:'La integración más completa: presencia en los canales de Kika y en la cuenta de la marca.',flag:'Recomendado',bonus:true}
+  var M=12;
+  /* Formatos: [id, nombre, descriptor, grupo de color, valor unitario, meses en que sale, cantidad por mes] */
+  var ODD=[1,3,5,7,9,11], EVEN=[2,4,6,8,10,12], ALL=[1,2,3,4,5,6,7,8,9,10,11,12];
+  var F=[
+    ['q','Pregúntale a Kika','Historias · Respondiendo preguntas','hi',6530000,ODD,1],
+    ['d','Detrás del Post','Historias · Anclando contenidos','hi',6530000,EVEN,1],
+    ['k','Kilómetros con Kika','Reel en collab · Viaje en carretera','hi',10450000,[3,6,9,12],1],
+    ['v','Pase VIP','TikTok · Vlog en eventos','tt',7540000,EVEN,1],
+    ['a','Anatomía del Carro','Carrusel IG','ca',7530000,ODD,1],
+    ['y','Diario al Volante','Mención YouTube · Canal de vlogs','yt',4200000,ODD,1],
+    ['r','Día de Rodaje','Contenido para cuenta BYD · 3 videos cada 3 meses','ug',2500000,[2,5,8,11],3]
   ];
-  PK.forEach(function(p){p.full=p.inc.reduce(function(s,i){return s+R[ITEMS[i][2]]},0);});
-  var grid=document.getElementById('pkGrid');
-  grid.innerHTML=PK.map(function(p){
-    var li=ITEMS.map(function(it,i){
-      var nm='<span>'+it[0]+'<small>'+it[1]+'</small></span>';
-      return p.inc.indexOf(i)>-1?'<li>'+nm+'<span>'+cop(R[it[2]])+'</span></li>':'<li class="off">'+nm+'<span>—</span></li>';
-    }).join('');
-    if(p.bonus) li+='<li class="bonus"><span><span id="bonus-'+p.k+'">+ Kilómetros con Kika</span><small>Historias · Viaje en carretera</small></span><span>Sin costo</span></li>';
-    return '<div class="pk '+p.k+' rv">'+(p.flag?'<span class="pk-flag">'+p.flag+'</span>':'')+
-      '<div class="pk-medal">Paquete</div><div class="pk-name">'+p.n.toUpperCase()+'</div><p class="pk-sub">'+p.sub+'</p>'+
-      '<div class="pk-amt"><div class="pk-full">Valor a tarifa plena <s>'+cop(p.full)+'</s></div>'+
-      '<div class="pk-price" id="pr-'+p.k+'"></div><div class="pk-per" id="per-'+p.k+'"></div>'+
-      '<div class="save"><div class="save-l" id="svl-'+p.k+'"></div><div class="save-v" id="sv-'+p.k+'"></div></div></div>'+
-      '<ul>'+li+'</ul><div class="pk-foot"><b>'+p.inc.length+' acciones</b> por paquete'+(p.bonus?', más el viaje en carretera.':'.')+'</div></div>';
-  }).join('');
-  function renderPk(m){
-    PK.forEach(function(p){
-      var price=p.full*(1-p.d)*(1-DUR[m]);
-      var amt=grid.querySelector('.'+p.k+' .pk-amt');amt.classList.add('flash');
-      setTimeout(function(){
-        document.getElementById('pr-'+p.k).textContent=cop(price);
-        document.getElementById('per-'+p.k).textContent=m===1?'COP · por paquete · antes de IVA':'COP · por mes · plan de '+m+' meses';
-        var save=(p.full-price)*m;
-        document.getElementById('svl-'+p.k).innerHTML=m===1?'Ahorro en el paquete<small>frente a tarifa plena</small>':'Ahorro en el plan<small>'+cop(p.full-price)+' cada mes · '+m+' meses</small>';
-        document.getElementById('sv-'+p.k).textContent=cop(save);
-        if(p.bonus) document.getElementById('bonus-'+p.k).textContent=m===1?'+ Kilómetros con Kika (en planes de embajadora)':'+ Kilómetros con Kika ('+Math.floor(m/2)+' en el plan)';
-        amt.classList.remove('flash');
-      },m===curMode?0:180);
+  var PL={
+    br:{n:'Bronce',d:.10,inc:['q','v','y'],desc:'Presencia constante y orgánica de BYD dentro del contenido habitual de Kika.'},
+    pl:{n:'Plata',d:.15,inc:['q','d','v','a','y'],desc:'Amplía la presencia a más plataformas y mantiene una conversación constante alrededor de la marca.'},
+    or:{n:'Oro',d:.20,inc:['q','d','k','v','a','y','r'],desc:'La integración más completa: presencia en los canales de Kika, reels en collab y contenido para la cuenta de BYD.'}
+  };
+  function minPlan(id){return ['br','pl','or'].filter(function(k){return PL[k].inc.indexOf(id)>-1})[0];}
+  var PH=[['q1','Arranque','BYD entra a la rutina de Kika'],['q2','Conversación','Dudas, viajes y confianza'],['q3','Profundizar','Lanzamientos y eventos'],['q4','Embajadora','BYD ya es parte de su historia']];
+  var tl=document.getElementById('timeline'), budget=document.getElementById('budgetLink');
+  function renderPlan(k){
+    var p=PL[k], full=0, pieces=0;
+    var h='<div class="tl-ph" style="grid-column:1/2"></div>'+PH.map(function(q){return '<div class="tl-ph '+q[0]+'">'+q[1]+'<small>'+q[2]+'</small></div>'}).join('')+'<div class="tl-ph"></div>';
+    h+='<div class="tl-h lab">Formato</div>';
+    for(var i=1;i<=M;i++)h+='<div class="tl-h">M'+i+'</div>';
+    h+='<div class="tl-h">Año</div>';
+    F.forEach(function(f){
+      var on=p.inc.indexOf(f[0])>-1, n=0, cells='';
+      for(var m=1;m<=M;m++){
+        var act=f[5].indexOf(m)>-1, cell='';
+        if(act){
+          if(on){n+=f[6];cell='<i class="dot g-'+f[3]+'">'+(f[6]>1?f[6]:'')+'</i>';}
+          else cell='<i class="dot o"></i>';
+        }
+        cells+='<div class="tl-c">'+cell+'</div>';
+      }
+      if(on){pieces+=n;full+=n*f[4];}
+      var tag=on?'':'<span class="tl-tag">Desde '+PL[minPlan(f[0])].n+'</span>';
+      h+='<div class="tl-row'+(on?'':' tl-row-off')+'" style="display:contents"><div class="tl-r"><span class="chip g-'+f[3]+'"></span><span>'+f[1]+'<small>'+f[2]+'</small>'+tag+'</span></div>'+cells+'<div class="tl-t">'+(on?n:'—')+'</div></div>';
     });
-    curMode=m;
+    tl.innerHTML=h;
+    var year=full*(1-p.d), save=full-year;
+    document.getElementById('planDesc').textContent=p.desc;
+    document.getElementById('kMonth').textContent=cop(year/M);
+    document.getElementById('kFullM').innerHTML='Tarifa plena <s>'+cop(full/M)+'</s>';
+    document.getElementById('kYear').textContent=cop(year);
+    document.getElementById('kSave').textContent=cop(save);
+    document.getElementById('kPieces').textContent=pieces;
+    document.getElementById('kPiecesS').textContent='en '+p.inc.length+' formatos';
+    budget.href='/byd/presupuesto/?plan='+k;
   }
-  var curMode=1; renderPk(1); bindSeg('segMode',renderPk);
-
-  /* ── ARMA TU ALIANZA ── */
-  var CAT=[
-    ['Instagram',[
-      ['ig-h','Historia','6530000'],['ig-fp','Fotopost','7530000'],['ig-fpc','Fotopost en collab','8700000'],
-      ['ig-fpr','Fotopost para redes de BYD','6730000'],['ig-r','Reel','9050000'],['ig-rc','Reel en collab','10450000'],
-      ['ig-rr','Reel para redes de BYD','6780000'],['ig-l','Live de 45 min (sin publicar)','10050000'],['ig-ls','Live shopping (30–45 min)','12060000']]],
-    ['TikTok',[['tt','Video TikTok','7540000']]],
-    ['YouTube',[
-      ['yt-mp','Mención 1 min · canal principal','4200000'],['yt-dp','Video dedicado · canal principal','12000000'],
-      ['yt-mv','Mención 1 min · canal de vlogs','4200000'],['yt-dv','Video dedicado · canal de vlogs','7800000']]],
-    ['Derechos (por 1 mes)',[
-      ['dr-p','Derechos de pauta','3200000'],['dr-i','Uso de imagen digital','2600000'],['dr-ip','Uso de imagen y pauta','4300000']]]
-  ];
-  var BY={};
-  var html='';
-  CAT.forEach(function(g){
-    html+='<div class="cat-g">'+g[0]+'</div>';
-    g[1].forEach(function(a){
-      BY[a[0]]={id:a[0],n:a[1],g:g[0],p:+a[2]};
-      html+='<div class="ci" draggable="true" data-id="'+a[0]+'"><span class="ci-grip">⋮⋮</span><span class="ci-n">'+esc(a[1])+'<small>'+g[0]+'</small></span><span class="ci-p">'+cop(+a[2])+'</span><button type="button" class="ci-add" aria-label="Agregar '+esc(a[1])+'">+</button></div>';
-    });
-  });
-  var catList=document.getElementById('catList'); catList.innerHTML=html;
-  var cart={}, order=[], calcM=1;
-  var drop=document.getElementById('drop');
-  function add(id){if(!BY[id])return; if(!cart[id]){cart[id]=0;order.push(id);} cart[id]++; renderCart();}
-  function setQ(id,q){ if(q<=0){delete cart[id];order=order.filter(function(x){return x!==id});} else cart[id]=q; renderCart();}
-  catList.addEventListener('click',function(e){var b=e.target.closest('.ci-add');if(b)add(b.parentNode.getAttribute('data-id'));});
-  catList.addEventListener('dragstart',function(e){var c=e.target.closest('.ci');if(!c)return;e.dataTransfer.setData('text/plain',c.getAttribute('data-id'));e.dataTransfer.effectAllowed='copy';});
-  ['dragenter','dragover'].forEach(function(ev){drop.addEventListener(ev,function(e){e.preventDefault();e.dataTransfer.dropEffect='copy';drop.classList.add('over');});});
-  drop.addEventListener('dragleave',function(e){if(!drop.contains(e.relatedTarget))drop.classList.remove('over');});
-  drop.addEventListener('drop',function(e){e.preventDefault();drop.classList.remove('over');add(e.dataTransfer.getData('text/plain'));});
-  document.getElementById('cartList').addEventListener('click',function(e){
-    var b=e.target.closest('button');if(!b)return;var id=b.getAttribute('data-id');
-    if(b.classList.contains('q-up'))setQ(id,cart[id]+1);
-    else if(b.classList.contains('q-dn'))setQ(id,cart[id]-1);
-    else if(b.classList.contains('rm'))setQ(id,0);
-  });
-  function renderCart(){
-    document.getElementById('dropEmpty').style.display=order.length?'none':'flex';
-    document.getElementById('cartList').innerHTML=order.map(function(id){
-      var a=BY[id];
-      return '<div class="cr"><span class="cr-n">'+esc(a.n)+'<small>'+a.g+' · '+cop(a.p)+'</small></span>'+
-        '<span class="cr-q"><button type="button" class="q-btn q-dn" data-id="'+id+'" aria-label="Quitar uno">−</button><span>'+cart[id]+'</span><button type="button" class="q-btn q-up" data-id="'+id+'" aria-label="Agregar uno">+</button></span>'+
-        '<button type="button" class="rm" data-id="'+id+'" aria-label="Eliminar">✕</button></div>';
-    }).join('');
-    calc();
-  }
-  function calc(){
-    var full=order.reduce(function(s,id){return s+BY[id].p*cart[id]},0);
-    var tier=null;for(var i=0;i<TIER.length;i++){if(full>=TIER[i].min){tier=TIER[i];break;}}
-    var inv=full*(1-(tier?tier.d:0))*(1-DUR[calcM]);
-    var save=(full-inv)*calcM;
-    document.getElementById('cFull').textContent=cop(full)+(calcM>1?' / mes':'');
-    document.getElementById('cTier').textContent=tier?('Nivel '+tier.n+(calcM>1?' + plan de '+calcM+' meses':'')):(calcM>1&&full>0?'Plan de '+calcM+' meses':'—');
-    document.getElementById('cInvL').textContent=calcM>1?'Inversión por mes':'Inversión';
-    document.getElementById('cInv').textContent=cop(inv);
-    document.getElementById('cSaveL').textContent=calcM>1?'Ahorro en el plan ('+calcM+' meses)':'Ahorro';
-    document.getElementById('cSave').textContent=cop(save);
-    var next=null;for(var j=TIER.length-1;j>=0;j--){if(full<TIER[j].min){next=TIER[j];break;}}
-    document.getElementById('cNote').textContent=!full?'Desde $18,27M en acciones se activa el beneficio Bronce; desde $32,33M, Plata; y desde $39,83M, Oro.':
-      (next?'Te faltan '+cop(next.min-full)+' en acciones para activar el beneficio '+next.n+'.':'Tu alianza ya tiene el beneficio más alto (nivel Oro).');
-  }
-  bindSeg('segCalc',function(m){calcM=m;calc();});
-
-  /* ── ENVIAR SOLICITUD (abre el correo) ── */
-  var MAIL='kikacolaboraciones@gmail.com';
-  var msg=document.getElementById('reqMsg');
-  document.getElementById('reqBtn').addEventListener('click',function(){
-    if(!order.length){msg.textContent='Agreguen al menos una acción a la alianza.';return;}
-    var lines=order.map(function(id){return '• '+cart[id]+' × '+BY[id].n+' ('+BY[id].g+') — '+cop(BY[id].p*cart[id])});
-    var body=['Hola equipo de Kika Nieto,','','Queremos avanzar con esta alianza BYD × Kika Nieto:','',
-      lines.join('\n'),'',
-      'Modalidad: '+(calcM===1?'Alianza única':'Plan de embajadora de '+calcM+' meses'),
-      'Valor a tarifa plena: '+document.getElementById('cFull').textContent,
-      'Beneficio aplicado: '+document.getElementById('cTier').textContent,
-      document.getElementById('cInvL').textContent+': '+document.getElementById('cInv').textContent,
-      document.getElementById('cSaveL').textContent+': '+document.getElementById('cSave').textContent,'',
-      'Nombre:','Cargo:','Teléfono:','','Valores en COP antes de IVA. Propuesta: '+location.href.split('#')[0]].join('\n');
-    var href='mailto:'+MAIL+'?subject='+encodeURIComponent('Solicitud de alianza BYD × Kika Nieto')+'&body='+encodeURIComponent(body);
-    window.location.href=href;
-    msg.innerHTML='Se abrió su correo con la solicitud lista. Si no se abrió, escriban a <a href="mailto:'+MAIL+'">'+MAIL+'</a>.';
-  });
-  calc();
+  renderPlan('or'); bindSeg('segPlan',function(v){renderPlan(v)});
 
   reveal(document.querySelectorAll('.rv'));
 
   /* ── MODO EDICIÓN (?editar) ── */
   if(/[?&]editar\b/.test(location.search)){
-    var SEL='h1,h2,h3,.hero-script,.hero-tagline,.hero-eyebrow,.sec-label,.sec-sub,.dir-to,.meta-pill,.hero-stat-n,.hero-stat-lbl,.photo-tag span,.aud-n,.aud-t,.op-copy p,.op-highlight,.concept-big,.cstep-t,.cstep-b,.fmt-t,.fmt-b,.fmt-chips span,.anatomy,.ref-t,.fl-i b,.fl-i span,.fmt-d,.fmt-lead,.vol-t,.vol-d,.why-c .aud-t,.mode-t,.mode-b,.mk-t,.mk-b,.note,.week-w,.week li,.week-out,.weeks-note,.ben-n,.ben-t,.ben-b,.cierre-eyebrow,.cierre-script,.cierre-sub,.next div,.cb-label,.cb-name,.cb-role,.cb-info,.footer span';
-    var SKIP='#pkGrid,#catList,#cartList,.sum,.req,.topnav,script,style';
+    var SEL='h1,h2,h3,.hero-script,.hero-tagline,.hero-eyebrow,.sec-label,.sec-sub,.dir-to,.meta-pill,.hero-stat-n,.hero-stat-lbl,.photo-tag span,.aud-n,.aud-t,.op-copy p,.op-highlight,.concept-big,.cstep-t,.cstep-b,.fmt-t,.fmt-b,.fmt-chips span,.anatomy,.ref-t,.fl-i b,.fl-i span,.fmt-d,.fmt-lead,.vol-t,.vol-d,.custom-t,.custom-b,.kpi-l,.why-c .aud-t,.mode-t,.mode-b,.mk-t,.mk-b,.note,.week-w,.week li,.week-out,.weeks-note,.ben-n,.ben-t,.ben-b,.cierre-eyebrow,.cierre-script,.cierre-sub,.next div,.cb-label,.cb-name,.cb-role,.cb-info,.footer span';
+    var SKIP='#timeline,#planDesc,.kpi-v,.kpi-s,#volBody,.topnav,script,style';
     function editables(root){
       return Array.prototype.filter.call(root.querySelectorAll(SEL),function(el){
         if(el.closest(SKIP))return false;
